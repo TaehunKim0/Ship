@@ -37,9 +37,19 @@ float Texture::GetWidth() const
 	return width;
 }
 
+float Texture::GetHeight() const
+{
+	return height;
+}
+
+D3DXVECTOR2 Texture::GetCentor()
+{
+
+	return D3DXVECTOR2(this->width / 2, this->height / 2);
+}
+
 string Texture::GetFileName() const
 {
 	return filename;
 }
-
 

@@ -69,6 +69,12 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		{
 			GameMgr::GetInstance()->Update();
 			GameMgr::GetInstance()->Draw();
+
+			GameTime::CurrentFrame++;
+			if (GameTime::CurrentFrame > 60)
+				GameTime::CurrentFrame = 1;
+
+			GameTime::TotalFrame++;
 		}
 	}
 

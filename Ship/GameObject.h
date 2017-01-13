@@ -1,7 +1,7 @@
 #pragma once
 class GameObject
 {
-private:
+public:
 	D3DXMATRIX matrix; 
 
 	D3DXVECTOR2 position;

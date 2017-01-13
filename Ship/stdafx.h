@@ -19,7 +19,8 @@
 #include"InputMgr.h"
 #include"GameMgr.h"
 #include"GameObject.h"
-
+#include"Timer.h"
+#include"GameTime.h"
 
 #define SAFE_DELETE(x) { if(x) { delete x; x = NULL; } }
 #define SAFE_RELEASE(x) { if(x) { x->Release(); x = NULL; } }

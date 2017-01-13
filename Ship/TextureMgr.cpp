@@ -31,6 +31,7 @@ Texture * TextureMgr::LoadTexture(string filename)
 
 	LPDIRECT3DTEXTURE9 nativeTexture;
 
+	//파일을 기본으로 해 텍스쳐를 생성한다.
 	if FAILED(D3DXCreateTextureFromFileEx(
 		GraphicMgr::GetInstance()->GetDevice(), filename.c_str(),
 		D3DX_DEFAULT_NONPOW2, D3DX_DEFAULT_NONPOW2,

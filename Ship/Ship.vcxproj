@@ -19,10 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationSprite.cpp" />
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="GameMgr.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="GraphicMgr.cpp" />
     <ClCompile Include="InputMgr.cpp" />
+    <ClCompile Include="Intro_scene.cpp" />
+    <ClCompile Include="land_stage.cpp" />
+    <ClCompile Include="Main_scene.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMgr.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -31,14 +38,22 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureMgr.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationSprite.h" />
+    <ClInclude Include="Background.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="GameMgr.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameTime.h" />
     <ClInclude Include="GraphicMgr.h" />
     <ClInclude Include="InputMgr.h" />
+    <ClInclude Include="Intro_scene.h" />
+    <ClInclude Include="land_stage.h" />
+    <ClInclude Include="Main_scene.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMgr.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SingleTon.h" />
@@ -46,6 +61,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureMgr.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3275D758-408A-44D4-860B-DDC84AE2E5C2}</ProjectGuid>
