@@ -10,6 +10,7 @@
 #include<unordered_map>
 #include<algorithm>
 #include<functional>
+#include<iostream>
 
 #include"SingleTon.h"
 
@@ -21,6 +22,8 @@
 #include"GameObject.h"
 #include"Timer.h"
 #include"GameTime.h"
-
+#include"AnimationSprite.h"
+#include"PlayerMgr.h"
+#include"Sprite.h"
 #define SAFE_DELETE(x) { if(x) { delete x; x = NULL; } }
 #define SAFE_RELEASE(x) { if(x) { x->Release(); x = NULL; } }

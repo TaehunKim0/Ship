@@ -21,6 +21,10 @@
   <ItemGroup>
     <ClCompile Include="AnimationSprite.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletMgr.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Friendly.cpp" />
     <ClCompile Include="GameMgr.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameTime.cpp" />
@@ -28,7 +32,9 @@
     <ClCompile Include="InputMgr.cpp" />
     <ClCompile Include="Intro_scene.cpp" />
     <ClCompile Include="land_stage.cpp" />
+    <ClCompile Include="Loading_scene.cpp" />
     <ClCompile Include="Main_scene.cpp" />
+    <ClCompile Include="MonsterSpawner.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMgr.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
@@ -44,7 +50,11 @@
   <ItemGroup>
     <ClInclude Include="AnimationSprite.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletMgr.h" />
     <ClInclude Include="Console.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Friendly.h" />
     <ClInclude Include="GameMgr.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameTime.h" />
@@ -52,7 +62,9 @@
     <ClInclude Include="InputMgr.h" />
     <ClInclude Include="Intro_scene.h" />
     <ClInclude Include="land_stage.h" />
+    <ClInclude Include="Loading_scene.h" />
     <ClInclude Include="Main_scene.h" />
+    <ClInclude Include="MonsterSpawner.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMgr.h" />
     <ClInclude Include="SceneMgr.h" />

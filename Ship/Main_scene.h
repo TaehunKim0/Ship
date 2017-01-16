@@ -1,10 +1,10 @@
 #pragma once
-
-class AnimationSprite;
+class Sprite;
 class Main_scene : public GameObject
 {
 private:
 	AnimationSprite* selectMenu;
+	Sprite* Main;
 
 	int menuIndex;
 
@@ -14,6 +14,4 @@ public:
 
 	void OnUpdate() override;
 	void OnDraw() override;
-
 };
-

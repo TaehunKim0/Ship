@@ -15,6 +15,8 @@ private:
 	bool isFlippedx;
 	bool isFlippedy;
 
+	string filename;
+
 public:
 	Sprite();
 	virtual ~Sprite();

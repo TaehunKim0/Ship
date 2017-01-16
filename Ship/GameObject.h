@@ -35,5 +35,8 @@ public:
 
 	void ClearChildren();
 
+
+	int GetPositionX() const;
+	int GetPositionY() const;
 };
 

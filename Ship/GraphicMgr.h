@@ -1,4 +1,5 @@
 #pragma once
+
 class Texture;
 class GraphicMgr : public SingleTon<GraphicMgr>
 {
@@ -9,13 +10,17 @@ private:
 	LPD3DXSPRITE sprite; // 2D이미지를 그리기 편하게 해줌
 
 
+
+	
 public:
 	GraphicMgr();
 	~GraphicMgr();
 
 	void Init(HWND hwindow, BOOL windowed);
 	void Release();
+	int width;
 
+	int height;
 public:
 	void BeginDraw();
 	void EndDraw();

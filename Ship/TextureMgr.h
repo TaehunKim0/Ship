@@ -6,7 +6,7 @@ class TextureMgr : public SingleTon<TextureMgr>
 {
 private:
 	unordered_map<string, Texture*> textureMap;
-
+	LPDIRECT3DDEVICE9 devicess;
 
 public:
 	TextureMgr();

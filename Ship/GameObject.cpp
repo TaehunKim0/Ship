@@ -55,6 +55,8 @@ void GameObject::Draw()
 	OnDraw();
 }
 
+
+
 D3DXVECTOR2 GameObject::GetPosition() const
 {
 	return this->position;
@@ -92,4 +94,14 @@ void GameObject::ClearChildren()
 	childrenObjects.clear();
 
 
+}
+
+int GameObject::GetPositionX() const
+{
+	return this->position.x;
+}
+
+int GameObject::GetPositionY() const
+{
+	return this->position.y;
 }

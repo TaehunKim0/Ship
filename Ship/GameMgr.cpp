@@ -13,11 +13,13 @@ GameMgr::~GameMgr()
 
 void GameMgr::Init(HWND hWindow, bool windowed)
 {
+	Console::Init();
+
 	GraphicMgr::GetInstance()->Init(hWindow, windowed);
 	TextureMgr::GetInstance()->Init();
 	InputMgr::GetInstance()->Init(hWindow);
 
-	Console::Init();
+
 }
 
 void GameMgr::Release()

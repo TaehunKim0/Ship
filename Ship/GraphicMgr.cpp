@@ -17,24 +17,46 @@ void GraphicMgr::Init(HWND hwindow, BOOL windowed)
 	GetClientRect(hwindow, &clientRect);
 	//클라이언트의 작업 영역의 크기를 구해준다
 
+	this->width = (clientRect.right - clientRect.left);
+	this->height = (clientRect.bottom - clientRect.top);
+
 	//D3D 객체 생성(Device를 생성하기 위함)
 	if ((d3d9 = Direct3DCreate9(D3D_SDK_VERSION)) == NULL)
 		return;
 
 	//Device 설정
 	D3DPRESENT_PARAMETERS d3dpp = {}; 
-	ZeroMemory(&d3dpp, sizeof(d3dpp));
-	//d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
-	d3dpp.BackBufferFormat = D3DFMT_X8R8G8B8;
+	d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	d3dpp.Windowed = false;
-	d3dpp.BackBufferWidth = 1280;
-	d3dpp.BackBufferHeight = 720;
+	d3dpp.Windowed = TRUE;
+
 	//위 코드는 전체화면 설정 
+	HRESULT hResult = d3d9->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwindow,
+		D3DCREATE_SOFTWARE_VERTEXPROCESSING, &d3dpp, &device);
+
+	switch (hResult)
+	{
+	case D3DERR_INVALIDCALL:
+		printf("메서드의 호출이 무효이다. 예를 들어, 메서드의 파라미터에 무효인 값이 설정되어 있는 경우 등이다");
+		break;
+	case D3DERR_NOTAVAILABLE:
+		printf("이 장치는, 문의한 테크닉을 지원 하고 있지 않다.");
+		break;
+	case D3DERR_OUTOFVIDEOMEMORY:
+		printf("Direct3D 가 처리를 실시하는데 충분한 디스플레이 메모리가 없다.");
+		break;
+	case D3D_OK:
+		break;
+	default:
+		printf("어느 항목에도 해당x");
+		
+	}
 
 	//Device 생성
-	if FAILED(d3d9->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwindow, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &d3dpp, &device))
+	/*if FAILED(d3d9->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwindow,
+		D3DCREATE_SOFTWARE_VERTEXPROCESSING, &d3dpp, &device))
 		return;
+		*/
 
 	//Sprite 생성
 	if FAILED(D3DXCreateSprite(device, &sprite))
@@ -79,4 +101,5 @@ void GraphicMgr::DrawTexture(Texture * texture, LPRECT srcRect, D3DXCOLOR color,
 	sprite->Begin(D3DXSPRITE_ALPHABLEND); //Sprite 그릴 준비
 	sprite->SetTransform(&matrix); //Sprite의 행렬을 적용시킨다
 	sprite->Draw(texture->GetTexture(), srcRect, NULL, NULL, color);//그린다.
+	sprite->End();
 }

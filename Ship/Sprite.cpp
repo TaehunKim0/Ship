@@ -2,6 +2,7 @@
 #include "Sprite.h"
 #include"Texture.h"
 
+using namespace std;
 Sprite::Sprite() : color(D3DCOLOR_XRGB(255,2552,255))
 {
 }
@@ -91,4 +92,5 @@ void Sprite::OnUpdate()
 void Sprite::OnDraw()
 {
 	GraphicMgr::GetInstance()->DrawTexture(texture, &sourceRect, color, matrix);
+
 }

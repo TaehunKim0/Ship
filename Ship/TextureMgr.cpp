@@ -31,6 +31,11 @@ Texture * TextureMgr::LoadTexture(string filename)
 
 	LPDIRECT3DTEXTURE9 nativeTexture;
 
+	devicess = GraphicMgr::GetInstance()->GetDevice();
+
+	if (devicess == nullptr)
+		printf("TextureMgr에서 Device를 가져오지 못했다.");
+
 	//파일을 기본으로 해 텍스쳐를 생성한다.
 	if FAILED(D3DXCreateTextureFromFileEx(
 		GraphicMgr::GetInstance()->GetDevice(), filename.c_str(),
@@ -42,7 +47,7 @@ Texture * TextureMgr::LoadTexture(string filename)
 		printf("새 텍스쳐 할당 실패(%s)\n", filename.c_str());
 		return nullptr;
 	}
-
+	
 	Texture* texture = new Texture();
 	texture->SetTexture(filename, nativeTexture);
 

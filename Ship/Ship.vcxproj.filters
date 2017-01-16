@@ -16,6 +16,21 @@
     <Filter Include="Game\Stage">
       <UniqueIdentifier>{dbdc4b57-ef9a-4b70-bd7e-d338dcec16ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Player">
+      <UniqueIdentifier>{dc1e6310-fbb4-4de4-940e-d012746007b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Enemy">
+      <UniqueIdentifier>{e7b5d509-1f53-4c5c-a75c-243f54ba7c76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Friendly">
+      <UniqueIdentifier>{dfa0bb34-4234-4013-969a-1528a87a7331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\UI">
+      <UniqueIdentifier>{ac147064-120c-4e81-9191-453c9e4993db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Mob">
+      <UniqueIdentifier>{d5f132e7-963a-481a-95d3-c24ea533b212}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
@@ -58,20 +73,38 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Intro_scene.cpp">
       <Filter>Game\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Background.cpp">
-      <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Main_scene.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="land_stage.cpp">
       <Filter>Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Loading_scene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMgr.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterSpawner.cpp">
+      <Filter>Game\Mob</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Friendly.cpp">
+      <Filter>Game\Friendly</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -120,20 +153,38 @@
     <ClInclude Include="Timer.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="Intro_scene.h">
       <Filter>Game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Background.h">
-      <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Main_scene.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="land_stage.h">
       <Filter>Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Loading_scene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMgr.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterSpawner.h">
+      <Filter>Game\Mob</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Friendly.h">
+      <Filter>Game\Friendly</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

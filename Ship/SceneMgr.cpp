@@ -25,7 +25,7 @@ void SceneMgr::Draw()
 	GraphicMgr::GetInstance()->BeginDraw();
 
 	if (currentScene)
-		currentScene->Update();
+		currentScene->Draw();
 
 	GraphicMgr::GetInstance()->EndDraw();
 }

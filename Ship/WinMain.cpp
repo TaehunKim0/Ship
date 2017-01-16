@@ -1,8 +1,8 @@
 #include"stdafx.h"
-
+#include"Main_scene.h"
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
-
+RECT windowRect = { 0,0,SCREEN_WIDTH,SCREEN_HEIGHT };
 HWND hwindow;
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
@@ -30,13 +30,13 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	if (RegisterClass(&wc) == NULL) //window 클래스를 등록한다.
 		return 0;
 
-	RECT rect = { 0,0,SCREEN_WIDTH,SCREEN_HEIGHT };
-	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+	
+	AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, false);
 
 	SIZE ActualSize =
 	{
-		(rect.right - rect.left),
-		(rect.bottom - rect.top)
+		(windowRect.right - windowRect.left),
+		(windowRect.bottom - windowRect.top)
 	};
 
 	hwindow = CreateWindow(
@@ -53,8 +53,9 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	ShowWindow(hwindow, SW_SHOWDEFAULT); //여기서 WM_PAINT 메세지가 발생해서 화면에 윈도우를 나타낸다.
 	UpdateWindow(hwindow); //바로 Updatewindow로 화면을 갱신한다.
 
-	GameMgr::GetInstance()->Init(hwindow, false);
-	//SceneMgr::GetInstance()->SetScene(new )
+	GameMgr::GetInstance()->Init(hwindow, true);
+
+	SceneMgr::GetInstance()->SetScene(new Main_scene());
 
 	MSG msg = {};
 
@@ -69,12 +70,14 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		{
 			GameMgr::GetInstance()->Update();
 			GameMgr::GetInstance()->Draw();
+	
 
 			GameTime::CurrentFrame++;
-			if (GameTime::CurrentFrame > 60)
-				GameTime::CurrentFrame = 1;
+			//if (GameTime::CurrentFrame > 60)
+			//	GameTime::CurrentFrame = 1;
 
 			GameTime::TotalFrame++;
+
 		}
 	}
 

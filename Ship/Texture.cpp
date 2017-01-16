@@ -44,7 +44,6 @@ float Texture::GetHeight() const
 
 D3DXVECTOR2 Texture::GetCentor()
 {
-
 	return D3DXVECTOR2(this->width / 2, this->height / 2);
 }
 
