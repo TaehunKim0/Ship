@@ -50,9 +50,10 @@ void Player::OnUpdate()
 			direction = PlayerDirection::down;
 		}
 	}
+	
 
 	//ÇÃ·¹ÀÌ¾î°¡ stand
-	if (state == PlayerState::stand)
+	if (state == PlayerState::middleStand)
 	{
 		if (InputMgr::GetInstance()->IsKeyDown(VK_RIGHT)) //¿ì
 		{
@@ -60,7 +61,7 @@ void Player::OnUpdate()
 			printf("¿ì \n");
 		}
 
-		if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT)) //ÁÂ
+		else if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT)) //ÁÂ
 		{
 			direction = PlayerDirection::left;
 			printf("ÁÂ \n");
@@ -73,7 +74,7 @@ void Player::OnUpdate()
 			printf("»ó \n");
 		}
 
-		if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN)) //ÇÏ
+		else if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN)) //ÇÏ
 		{
 			this->position.y += speed;
 			direction = PlayerDirection::down;
@@ -90,19 +91,27 @@ void Player::OnUpdate()
 	if (this->GetPositionX() > 1100)
 		this->position.x = 1100;
 
-	printf("%d", this->GetPositionX());
+	if (this->GetPositionY() < 0)
+		this->position.y = 0;
+
+	if (this->GetPositionY() > 620)
+		this->position.y = 620;
+
 
 	//ÃÑ¾Ë °ø°Ý
 	if (InputMgr::GetInstance()->IsKeyDown(VK_SPACE) & GameTime::CurrentFrame % 10 == 0)
 	{
 		auto bullet = new Bullet();
 		bullet->SetPosition(GetPosition() + (player->GetSize() / 2) - (bullet->bullet->GetSize() / 2));
-
+		
 		if (direction == PlayerDirection::left)
 			bullet->direction = bulletDirection::left;
-		
-		if (direction == PlayerDirection::right)
+
+		else if (direction == PlayerDirection::right)
 			bullet->direction = bulletDirection::right;
+
+		else
+			printf("Bullet ELSE \n");
 
 		bulletList.push_back(bullet);
 	}

@@ -10,7 +10,7 @@ namespace PlayerState
 	{
 		stand =0,
 		move = 1,
-		notMove = 2
+		middleStand = 2
 	};
 }
 

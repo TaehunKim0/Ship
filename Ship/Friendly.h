@@ -1,10 +1,16 @@
 #pragma once
-class Friendly
+class Bullet;
+class Friendly : public Unit
 {
+private:
+
 
 	
 public:
-	Friendly();
+	Friendly(string type);
 	~Friendly();
+
+	void Attack();
+	void Move();
 };
 

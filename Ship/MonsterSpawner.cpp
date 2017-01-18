@@ -10,3 +10,11 @@ MonsterSpawner::MonsterSpawner()
 MonsterSpawner::~MonsterSpawner()
 {
 }
+
+void MonsterSpawner::OnUpdate()
+{
+}
+
+void MonsterSpawner::OnDraw()
+{
+}

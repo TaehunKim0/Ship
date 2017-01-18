@@ -14,8 +14,6 @@ class Bullet : public GameObject
 private:
 	float speed;
 
-	
-
 public:
 	Bullet();
 	~Bullet();
