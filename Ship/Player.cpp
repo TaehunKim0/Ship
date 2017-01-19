@@ -4,7 +4,7 @@
 #include"Sprite.h"
 #include"Texture.h"
 
-Player::Player() : speed(5.0f)
+Player::Player() : speed(5.0f), health(5)
 {
 
 	player = Sprite::Create("Resources/turtle.png");
@@ -50,7 +50,6 @@ void Player::OnUpdate()
 			direction = PlayerDirection::down;
 		}
 	}
-	
 
 	//플레이어가 stand
 	if (state == PlayerState::middleStand)

@@ -1,19 +1,16 @@
 #pragma once
 class Sprite;
+class Player;
 class Background : public GameObject
 {
 private:
-	std::vector<Sprite*> BackgroundList;
+	Sprite* background;
+	Player* player;
 
 public:
-	Background();
+	Background(string background);
 	~Background();
-
-	void AddBackground(Sprite* background);
-
-	void RemoveBackground();
 
 	void OnUpdate() override;
 	void OnDraw() override;
 };
-

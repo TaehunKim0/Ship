@@ -23,6 +23,8 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletMgr.cpp" />
+    <ClCompile Include="CollisionMgr.cpp" />
+    <ClCompile Include="End_scene.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Friendly.cpp" />
     <ClCompile Include="GameMgr.cpp" />
@@ -53,7 +55,9 @@
     <ClInclude Include="Background.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletMgr.h" />
+    <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Console.h" />
+    <ClInclude Include="End_scene.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Friendly.h" />
     <ClInclude Include="GameMgr.h" />

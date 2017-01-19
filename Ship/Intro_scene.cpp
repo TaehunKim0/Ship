@@ -15,7 +15,7 @@ Intro_scene::Intro_scene()
 
 	auto timer = new Timer([]()
 	{
-		SceneMgr::GetInstance()->SetScene(new Loading_scene());
+		SceneMgr::GetInstance()->SetScene(new Loading_scene("intro"));
 	},7000);
 	timer->Run();
 }

@@ -1,16 +1,15 @@
 #pragma once
-class Sprite;
+
 class Player;
+class Background;
+
 class land_stage : public GameObject
 {
 private:
-	Sprite* land;
 	Player* player;
-	int x;
-	int y;
+	Background* background;
 
 
-	int lx;
 public:
 	land_stage();
 	~land_stage();

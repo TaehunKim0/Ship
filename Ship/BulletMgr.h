@@ -7,5 +7,6 @@ private:
 public:
 	BulletMgr();
 	~BulletMgr();
-};
 
+
+};

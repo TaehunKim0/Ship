@@ -5,8 +5,9 @@ private:
 	Sprite* loadingBackground;
 	Sprite* loadingTurtle;
 
+	int load;
 public:
-	Loading_scene();
+	Loading_scene(string load);
 	~Loading_scene();
 
 	void OnUpdate();

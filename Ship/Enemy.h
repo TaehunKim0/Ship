@@ -1,7 +1,6 @@
 #pragma once
 
-class Bullet;
-
+#include"Unit.h"
 class Enemy  : public Unit
 {
 private:
@@ -14,5 +13,7 @@ public:
 	void Attack();
 	void Move();
 
+	void OnUpdate();
+	void OnDraw();
 };
 

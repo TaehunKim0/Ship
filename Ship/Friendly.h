@@ -1,5 +1,5 @@
 #pragma once
-class Bullet;
+#include"Unit.h"
 class Friendly : public Unit
 {
 private:
@@ -12,5 +12,7 @@ public:
 
 	void Attack();
 	void Move();
-};
 
+	void OnUpdate();
+	void OnDraw();
+};

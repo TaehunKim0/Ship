@@ -109,6 +109,12 @@
     <ClCompile Include="sea_stage.cpp">
       <Filter>Game\Stage</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="End_scene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMgr.h">
@@ -191,6 +197,12 @@
     </ClInclude>
     <ClInclude Include="sea_stage.h">
       <Filter>Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="End_scene.h">
+      <Filter>Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
