@@ -1,9 +1,10 @@
 #pragma once
 #include"Unit.h"
+class Bullet;
 class Friendly : public Unit
 {
 private:
-
+	Bullet* bullet;
 
 	
 public:
@@ -15,4 +16,6 @@ public:
 
 	void OnUpdate();
 	void OnDraw();
+
+	std::vector<Bullet*> bulletList;
 };

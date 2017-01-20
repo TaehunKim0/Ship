@@ -1,7 +1,6 @@
 #include "stdafx.h"
-#include"Unit.h"
 #include"Enemy.h"
-
+#include"Bullet.h"
 Enemy::Enemy(string type)
 {
 	life = 2;
@@ -28,7 +27,11 @@ Enemy::~Enemy()
 
 void Enemy::Attack()
 {
+	bullet = new Bullet();
 
+	bullet->direction = bulletDirection::left;
+
+	bulletList.push_back(bullet);
 }
 
 void Enemy::Move()
@@ -38,8 +41,14 @@ void Enemy::Move()
 
 void Enemy::OnUpdate()
 {
-	//일정 시간마다 
-	Attack();
+	//일정 시간마다
+	if (GameTime::CurrentFrame % 180 == 0)
+	{
+		Attack();
+	}
+	
+	for (auto bullet : bulletList)
+		bullet->Update();
 
 	//어느정도 이동하면 멈춤 총만 쏜다.
 	Move();
@@ -47,6 +56,7 @@ void Enemy::OnUpdate()
 
 void Enemy::OnDraw()
 {
-
+	for (auto bullet : bulletList)
+		bullet->Draw();
 }
 

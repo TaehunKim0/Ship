@@ -1,7 +1,6 @@
 #include "stdafx.h"
-#include"Unit.h"
 #include"Friendly.h"
-
+#include"Bullet.h"
 
 Friendly::Friendly(string type)
 {
@@ -28,7 +27,11 @@ Friendly::~Friendly()
 
 void Friendly::Attack()
 {
-	
+	bullet = new Bullet();
+
+	bullet->direction = bulletDirection::right;
+
+	bulletList.push_back(bullet);
 }
 
 void Friendly::Move()
@@ -39,8 +42,13 @@ void Friendly::Move()
 void Friendly::OnUpdate()
 {
 	//일정시간마다
-	Attack();
+	if (GameTime::CurrentFrame % 180 == 0)
+	{
+		Attack();
+	}
 
+	for (auto bullet : bulletList)
+		bullet->Update();
 	//만약 어느정도 이동하면 멈춤
 	Move();
 	
@@ -48,5 +56,6 @@ void Friendly::OnUpdate()
 
 void Friendly::OnDraw()
 {
-
+	for (auto bullet : bulletList)
+		bullet->Draw();
 }

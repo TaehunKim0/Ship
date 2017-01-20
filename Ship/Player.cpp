@@ -4,7 +4,7 @@
 #include"Sprite.h"
 #include"Texture.h"
 
-Player::Player() : speed(5.0f), health(5)
+Player::Player() : speed(5.0f), health(5) , attack(1)
 {
 
 	player = Sprite::Create("Resources/turtle.png");

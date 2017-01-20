@@ -39,6 +39,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMgr.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="ScoreMsg.cpp" />
     <ClCompile Include="sea_stage.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -72,6 +73,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMgr.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="ScoreMsg.h" />
     <ClInclude Include="sea_stage.h" />
     <ClInclude Include="SingleTon.h" />
     <ClInclude Include="Sprite.h" />

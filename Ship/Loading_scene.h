@@ -7,7 +7,7 @@ private:
 
 	int load;
 public:
-	Loading_scene(string load);
+	Loading_scene();
 	~Loading_scene();
 
 	void OnUpdate();

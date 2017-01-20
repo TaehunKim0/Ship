@@ -3,7 +3,7 @@
 #include"land_stage.h"
 #include"sea_stage.h"
 
-Loading_scene::Loading_scene(string load)
+Loading_scene::Loading_scene()
 {
 	loadingTurtle = Sprite::Create("Resources/turtle.png");
 
@@ -14,8 +14,7 @@ Loading_scene::Loading_scene(string load)
 	this->AddChild(loadingBackground);
 	this->AddChild(loadingTurtle);
 
-	if (load == "intro")
-	{
+	
 		auto timer = new Timer([]()
 		{
 			SceneMgr::GetInstance()->SetScene(new land_stage());
@@ -23,18 +22,6 @@ Loading_scene::Loading_scene(string load)
 
 
 		timer->Run();
-	}
-	
-	if (load == "stage")
-	{
-		auto timer = new Timer([]()
-		{
-			SceneMgr::GetInstance()->SetScene(new sea_stage());
-		}, 6000);
-
-
-		timer->Run();
-	}
 }
 
 Loading_scene::~Loading_scene()

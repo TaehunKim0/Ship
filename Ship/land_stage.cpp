@@ -35,9 +35,7 @@ void land_stage::OnUpdate()
 
 
 	//스코어 2000, 거북선 제작 완료
-	SceneMgr::GetInstance()->SetScene(new Loading_scene("stage"));	//로딩 화면 후 sea_stage
-
-
+		//로딩 씬 후 sea_stage
 }
 
 void land_stage::OnDraw()
