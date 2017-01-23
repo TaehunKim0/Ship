@@ -6,8 +6,8 @@
 Main_scene::Main_scene() : menuIndex(0)
 {
 	selectMenu = new AnimationSprite(1, 1);
-	selectMenu->AddFrame(Sprite::Create("Resources//Start.png"));
-	selectMenu->AddFrame(Sprite::Create("Resources/Quit.png"));
+	selectMenu->AddFrame(Sprite::Create("Resources//menu.png"));
+	selectMenu->AddFrame(Sprite::Create("Resources/menu2.png"));
 	selectMenu->SetCurrentFrane(0);
 	selectMenu->SetAutoNext(false);
 	selectMenu->SetPosition(200, 350);

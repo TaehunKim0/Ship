@@ -2,10 +2,14 @@
 
 #include"Unit.h"
 class Bullet;
+class Item;
 class Enemy  : public Unit
 {
 private:
 	Bullet* bullet;
+
+	Item * item;
+
 
 public:
 	Enemy(string type);
@@ -17,6 +21,7 @@ public:
 	void OnUpdate();
 	void OnDraw();
 
+	void DropItem();
 
 	std::vector<Bullet*> bulletList;
 };

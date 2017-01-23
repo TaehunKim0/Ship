@@ -11,6 +11,8 @@
 #include<algorithm>
 #include<functional>
 #include<iostream>
+#include<cstdlib>
+
 
 #include"SingleTon.h"
 

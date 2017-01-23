@@ -33,6 +33,7 @@
     <ClCompile Include="GraphicMgr.cpp" />
     <ClCompile Include="InputMgr.cpp" />
     <ClCompile Include="Intro_scene.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="land_stage.cpp" />
     <ClCompile Include="Loading_scene.cpp" />
     <ClCompile Include="Main_scene.cpp" />
@@ -67,6 +68,7 @@
     <ClInclude Include="GraphicMgr.h" />
     <ClInclude Include="InputMgr.h" />
     <ClInclude Include="Intro_scene.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="land_stage.h" />
     <ClInclude Include="Loading_scene.h" />
     <ClInclude Include="Main_scene.h" />

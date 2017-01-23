@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include"Enemy.h"
 #include"Bullet.h"
+#include"Item.h"
+
 Enemy::Enemy(string type)
 {
 	life = 2;
@@ -17,12 +19,16 @@ Enemy::Enemy(string type)
 	{
 
 	}
+
+	this->AddChild(item);
+
 }
 
 
 Enemy::~Enemy()
 {
-
+	DropItem();
+	
 }
 
 void Enemy::Attack()
@@ -50,6 +56,8 @@ void Enemy::OnUpdate()
 	for (auto bullet : bulletList)
 		bullet->Update();
 
+
+
 	//¾î´ÀÁ¤µµ ÀÌµ¿ÇÏ¸é ¸ØÃã ÃÑ¸¸ ½ð´Ù.
 	Move();
 }
@@ -58,5 +66,10 @@ void Enemy::OnDraw()
 {
 	for (auto bullet : bulletList)
 		bullet->Draw();
+}
+
+void Enemy::DropItem()
+{	
+	item = new Item(this->position.x, this->position.y);
 }
 

@@ -18,6 +18,8 @@ Friendly::Friendly(string type)
 	{
 
 	}
+
+	this->AddChild(friedly);
 }
 
 Friendly::~Friendly()

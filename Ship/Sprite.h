@@ -43,7 +43,7 @@ public:
 	void OnUpdate() override;
 	void OnDraw() override; //오버라이딩 제약
 
-
+	bool On;
 
 };
 

@@ -5,7 +5,7 @@ class Friendly : public Unit
 {
 private:
 	Bullet* bullet;
-
+	Sprite* friedly;
 	
 public:
 	Friendly(string type);

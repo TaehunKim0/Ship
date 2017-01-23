@@ -115,7 +115,12 @@
     <ClCompile Include="End_scene.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="ScoreMsg.cpp" />
+    <ClCompile Include="ScoreMsg.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMgr.h">
@@ -205,6 +210,11 @@
     <ClInclude Include="End_scene.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="ScoreMsg.h" />
+    <ClInclude Include="ScoreMsg.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
