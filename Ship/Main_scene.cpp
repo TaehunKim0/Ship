@@ -6,13 +6,13 @@
 Main_scene::Main_scene() : menuIndex(0)
 {
 	selectMenu = new AnimationSprite(1, 1);
-	selectMenu->AddFrame(Sprite::Create("Resources//menu.png"));
-	selectMenu->AddFrame(Sprite::Create("Resources/menu2.png"));
+	selectMenu->AddFrame(Sprite::Create("Resources/UI/menu.png"));
+	selectMenu->AddFrame(Sprite::Create("Resources/UI/menu2.png"));
 	selectMenu->SetCurrentFrane(0);
 	selectMenu->SetAutoNext(false);
 	selectMenu->SetPosition(200, 350);
 
-	Main = Sprite::Create("Resources/Main.png");
+	Main = Sprite::Create("Resources/Map/Main.png");
 	this->AddChild(Main);
 	this->AddChild(selectMenu);
 }

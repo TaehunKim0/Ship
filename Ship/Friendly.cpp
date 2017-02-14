@@ -9,15 +9,11 @@ Friendly::Friendly(string type)
 	speed = 1.0f;
 
 	//¸Ê¿¡ µû¶ó ¸ð½ÀÀÌ ¹Ù²ñ
-	if (type == "")
-	{
-
-	}
-
-	if (type == "")
-	{
-
-	}
+	if (SceneMgr::GetInstance()->GetScene()->id == "land")
+		friedly = Sprite::Create("Resources/Unit/friendly.png");
+	
+	if (SceneMgr::GetInstance()->GetScene()->id == "sea")
+		return;
 
 	this->AddChild(friedly);
 }
@@ -29,11 +25,13 @@ Friendly::~Friendly()
 
 void Friendly::Attack()
 {
-	bullet = new Bullet();
+	auto bullet = new Bullet("Friendly");
+
+	bullet->SetPosition(GetPosition() + (friedly->GetSize() / 2) - (bullet->bullet->GetSize() / 2));
 
 	bullet->direction = bulletDirection::right;
 
-	bulletList.push_back(bullet);
+	BulletMgr::GetInstance()->RegisterBullet(bullet);
 }
 
 void Friendly::Move()
@@ -49,8 +47,6 @@ void Friendly::OnUpdate()
 		Attack();
 	}
 
-	for (auto bullet : bulletList)
-		bullet->Update();
 	//¸¸¾à ¾î´ÀÁ¤µµ ÀÌµ¿ÇÏ¸é ¸ØÃã
 	Move();
 	
@@ -58,6 +54,5 @@ void Friendly::OnUpdate()
 
 void Friendly::OnDraw()
 {
-	for (auto bullet : bulletList)
-		bullet->Draw();
+
 }

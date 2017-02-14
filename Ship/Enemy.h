@@ -6,8 +6,8 @@ class Item;
 class Enemy  : public Unit
 {
 private:
-	Bullet* bullet;
 
+	Sprite* enemy;
 	Item * item;
 
 

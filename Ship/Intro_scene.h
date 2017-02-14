@@ -1,6 +1,6 @@
 #pragma once
 class AnimationSprite;
-class Intro_scene : public GameObject
+class Intro_scene : public Scene
 {
 private:
 	AnimationSprite* Intro;

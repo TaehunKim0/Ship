@@ -9,19 +9,18 @@ Loading_scene::Loading_scene()
 
 	loadingTurtle->SetPosition(50, 400);
 
-	loadingBackground = Sprite::Create("Resources/Background2.png");
+	loadingBackground = Sprite::Create("Resources/Map/Background2.png");
 
 	this->AddChild(loadingBackground);
 	this->AddChild(loadingTurtle);
 
 	
-		auto timer = new Timer([]()
-		{
-			SceneMgr::GetInstance()->SetScene(new land_stage());
-		}, 6000);
+	auto timer = new Timer([]()
+	{
+		SceneMgr::GetInstance()->SetScene(new land_stage());
+	}, 6000);
 
-
-		timer->Run();
+	timer->Run();
 }
 
 Loading_scene::~Loading_scene()

@@ -15,7 +15,7 @@ private:
 	float speed;
 
 public:
-	Bullet();
+	Bullet(string id);
 	~Bullet();
 	Sprite* bullet;
 	bulletDirection::EnumType direction;

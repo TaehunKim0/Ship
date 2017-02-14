@@ -1,19 +1,31 @@
 #include "stdafx.h"
 #include "land_stage.h"
+
 #include"Sprite.h"
 #include"Player.h"
 #include"Background.h"
 #include"Loading_scene.h"
+#include"UnitSpawner.h"
+
+
 
 land_stage::land_stage()
 {
+	
+	land_stage::id = "land";
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new Background("land");
+	unitSpawner = new UnitSpawner();
 
 	this->AddChild(background);
 	this->AddChild(player);
+	this->AddChild(BulletMgr::GetInstance());
+	this->AddChild(unitSpawner);
 
 	//게임 시간 초기화
+	cout << "Current Scene : " << id << endl;
+
+	unitSpawner->SpawnEnemy();
 }
 
 land_stage::~land_stage()
@@ -22,6 +34,11 @@ land_stage::~land_stage()
 
 void land_stage::OnUpdate()
 {
+
+	
+
+
+
 	//만약 + 버튼을 눌럿을 경우, Friendly 소환
 
 

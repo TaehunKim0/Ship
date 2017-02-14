@@ -1,6 +1,6 @@
 #pragma once
 class Sprite;
-class Main_scene : public GameObject
+class Main_scene : public Scene
 {
 private:
 	AnimationSprite* selectMenu;
@@ -14,4 +14,5 @@ public:
 
 	void OnUpdate() override;
 	void OnDraw() override;
+
 };

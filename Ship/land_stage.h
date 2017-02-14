@@ -2,12 +2,20 @@
 
 class Player;
 class Background;
+class Friendly;
+class Enemy;
+class UnitSpawner;
 
-class land_stage : public GameObject
+class land_stage : public Scene
 {
 private:
 	Player* player;
 	Background* background;
+
+	UnitSpawner* unitSpawner;
+
+	Friendly* friendly;
+	Enemy* enemy;
 
 
 public:

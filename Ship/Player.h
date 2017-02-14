@@ -10,7 +10,6 @@ namespace PlayerState
 	{
 		stand =0,
 		move = 1,
-		middleStand = 2
 	};
 }
 
@@ -28,19 +27,17 @@ namespace PlayerDirection
 class Player : public GameObject
 {
 private:
-	Sprite* player;
-	AnimationSprite* players;
+	AnimationSprite* right;
+	AnimationSprite* left;
+
 	int health;
 	float speed;
 	int attack;
 
-	
-
 public:
 	Player();
 	~Player();
-	Bullet* bullet;
-	std::vector<Bullet*> bulletList;
+	
 	PlayerState::EnumType state;
 	PlayerDirection::EnumType direction;
 

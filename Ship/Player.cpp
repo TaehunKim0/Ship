@@ -4,104 +4,70 @@
 #include"Sprite.h"
 #include"Texture.h"
 
-Player::Player() : speed(5.0f), health(5) , attack(1)
+Player::Player() : speed(2.0f), health(5) , attack(1)
 {
 
-	player = Sprite::Create("Resources/turtle.png");
-	player->parentObject = this;
+	right = new AnimationSprite(0, 10);
+	right->parentObject = this;
+
+	right->AddFrame(Sprite::Create("Resources/Player/Player_right1.png"));
+
+	left = new AnimationSprite(0, 10);
+	left->parentObject = this;
+
+	left->AddFrame(Sprite::Create("Resources/Player/Player_left1.png"));
+	
 
 	state = PlayerState::stand;
-	bullet = new Bullet();
 
 }
 
 Player::~Player()
 {
-
+	
 }
 
 void Player::OnUpdate()
 {
+
+	if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT))
+	{
+		position.x -= speed;
+		direction = PlayerDirection::left;
+		state = PlayerState::move;
+
+		//SceneMgr::GetInstance()->GetScene()->position.x -= 5;
+	}
+
+	else if(InputMgr::GetInstance()->IsKeyDown(VK_RIGHT))
+	{
+		position.x += speed;
+		direction = PlayerDirection::right;
+		state = PlayerState::move;
+
+		//SceneMgr::GetInstance()->GetScene()->position.x += 5;
+	}
+		
+
+	if (InputMgr::GetInstance()->IsKeyDown(VK_UP))
+	{
+		position.y -= speed;
+		direction = PlayerDirection::up;
+		state = PlayerState::move;
+	}
+	else if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN))
+	{
+		position.y += speed;
+		direction = PlayerDirection::down;
+		state = PlayerState::move;
+	}
+
 	
-	//플레이어가 move
-	if (state == PlayerState::move)
-	{
-		if (InputMgr::GetInstance()->IsKeyDown(VK_RIGHT)) //우
-		{
-			this->position.x += speed;
-			direction = PlayerDirection::right;
-		}
-
-		if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT)) //좌
-		{
-			this->position.x -= speed;
-			direction = PlayerDirection::left;
-		}
-
-		if (InputMgr::GetInstance()->IsKeyDown(VK_UP)) //상
-		{
-			this->position.y -= speed;
-			direction = PlayerDirection::up;
-		}
-
-		if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN)) //하
-		{
-			this->position.y += speed;
-			direction = PlayerDirection::down;
-		}
-	}
-
-	//플레이어가 stand
-	if (state == PlayerState::middleStand)
-	{
-		if (InputMgr::GetInstance()->IsKeyDown(VK_RIGHT)) //우
-		{
-			direction = PlayerDirection::right;
-			printf("우 \n");
-		}
-
-		else if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT)) //좌
-		{
-			direction = PlayerDirection::left;
-			printf("좌 \n");
-		}
-
-		if (InputMgr::GetInstance()->IsKeyDown(VK_UP)) //상
-		{
-			this->position.y -= speed;
-			direction = PlayerDirection::up;
-			printf("상 \n");
-		}
-
-		else if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN)) //하
-		{
-			this->position.y += speed;
-			direction = PlayerDirection::down;
-			printf("하 \n");
-		}
-	}
-
-
-
-	//맵 밖으로 못나감
-	if (this->GetPositionX() <= 0)
-		this->position.x = 0;
-
-	if (this->GetPositionX() > 1100)
-		this->position.x = 1100;
-
-	if (this->GetPositionY() < 0)
-		this->position.y = 0;
-
-	if (this->GetPositionY() > 620)
-		this->position.y = 620;
-
-
 	//총알 공격
 	if (InputMgr::GetInstance()->IsKeyDown(VK_SPACE) & GameTime::CurrentFrame % 10 == 0)
 	{
-		auto bullet = new Bullet();
-		bullet->SetPosition(GetPosition() + (player->GetSize() / 2) - (bullet->bullet->GetSize() / 2));
+		auto bullet = new Bullet("Player");
+		bullet->SetPosition(GetPosition() + (right->GetSize() / 2) - (bullet->bullet->GetSize() / 2));
 		
 		if (direction == PlayerDirection::left)
 			bullet->direction = bulletDirection::left;
@@ -112,21 +78,39 @@ void Player::OnUpdate()
 		else
 			printf("Bullet ELSE \n");
 
-		bulletList.push_back(bullet);
+		BulletMgr::GetInstance()->RegisterBullet(bullet);
 	}
 
-	for (auto bullet : bulletList)
+
+	switch (direction)
 	{
-		bullet->Update();
+
+	case PlayerDirection::right:
+		right->Update();
+		break;
+
+	case PlayerDirection::left:
+		left->Update();
+		break;
+		
 	}
 
 }
 
 void Player::OnDraw()
 {
-	for (auto bullet : bulletList)
+	
+	switch (direction)
 	{
-		bullet->Draw();
+
+	case PlayerDirection::right:
+		right->Draw();
+		break;
+
+	case PlayerDirection::left:
+		left->Draw();
+		break;
+
+
 	}
-	player->Draw();
 }

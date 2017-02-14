@@ -1,11 +1,9 @@
 #pragma once
-
-
-class GameObject;
+class Scene;
 class SceneMgr : public SingleTon<SceneMgr>
 {
 private:
-	GameObject* currentScene;
+	Scene* currentScene;
 
 
 public:
@@ -15,6 +13,8 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
-	void SetScene(GameObject* scene);
+	void SetScene(Scene* scene);
+
+	Scene* GetScene();
 };
 

@@ -2,13 +2,24 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet() : speed(3.0f)
+Bullet::Bullet(string id) : speed(3.0f)
 {
-	bullet = Sprite::Create("Resources/Bullet.png");
+	if (id == "Player")
+		bullet = Sprite::Create("Resources/bullet/Arrow.png");
+	
+	if (id == "Friendly")
+		bullet = Sprite::Create("Resources/bullet/UnitBullet.png");
+	
+	if (id == "Enemy")
+		bullet = Sprite::Create("Resources/bullet/UnitBullet.png");
+
+
+
 	bullet->parentObject = this;
 	this->AddChild(bullet);
 
 	direction = bulletDirection::right;
+
 }
 
 

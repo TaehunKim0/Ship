@@ -27,5 +27,8 @@
 #include"AnimationSprite.h"
 #include"PlayerMgr.h"
 #include"Sprite.h"
+#include"BulletMgr.h"
+#include"Scene.h"
+
 #define SAFE_DELETE(x) { if(x) { delete x; x = NULL; } }
 #define SAFE_RELEASE(x) { if(x) { x->Release(); x = NULL; } }

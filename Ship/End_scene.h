@@ -1,6 +1,6 @@
 #pragma once
 class AnimationSprite;
-class End_scene : public GameObject
+class End_scene : public Scene
 {
 private:
 	AnimationSprite* end;

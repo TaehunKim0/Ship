@@ -1,5 +1,5 @@
 #pragma once
-class Loading_scene : public GameObject
+class Loading_scene : public Scene
 {
 private:
 	Sprite* loadingBackground;

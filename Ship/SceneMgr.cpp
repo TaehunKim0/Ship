@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "SceneMgr.h"
 
-
+#include"Scene.h"
 SceneMgr::SceneMgr()
 {
 	currentScene = NULL;
@@ -30,10 +30,16 @@ void SceneMgr::Draw()
 	GraphicMgr::GetInstance()->EndDraw();
 }
 
-void SceneMgr::SetScene(GameObject * scene)
+void SceneMgr::SetScene(Scene * scene)
 {
 	if (currentScene)
 		SAFE_DELETE(currentScene);
 
 	currentScene = scene;
+
+}
+
+Scene * SceneMgr::GetScene()
+{
+	return currentScene;
 }

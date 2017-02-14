@@ -2,6 +2,7 @@
 class ScoreMsg : public GameObject
 {
 private:
+
 	Sprite * start;
 
 	Sprite* first;

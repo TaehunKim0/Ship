@@ -121,6 +121,8 @@
     <ClCompile Include="Item.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="UnitSpawner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMgr.h">
@@ -216,5 +218,7 @@
     <ClInclude Include="Item.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="UnitSpawner.h" />
   </ItemGroup>
 </Project>
