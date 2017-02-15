@@ -7,18 +7,20 @@
 Player::Player() : speed(2.0f), health(5) , attack(1)
 {
 
-	right = new AnimationSprite(0, 10);
+	right = new AnimationSprite(1, 10);
 	right->parentObject = this;
 
 	right->AddFrame(Sprite::Create("Resources/Player/Player_right1.png"));
+	right->AddFrame(Sprite::Create("Resources/Player/Player_right2.png"));
 
-	left = new AnimationSprite(0, 10);
+	left = new AnimationSprite(1, 10);
 	left->parentObject = this;
 
 	left->AddFrame(Sprite::Create("Resources/Player/Player_left1.png"));
-	
+	left->AddFrame(Sprite::Create("Resources/Player/Player_left2.png"));
 
-	state = PlayerState::stand;
+	SetState(PlayerState::stand);
+	SetDirection(PlayerDirection::right);
 
 	SetPosition(500, 100);
 }
@@ -33,34 +35,39 @@ void Player::OnUpdate()
 	if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT))
 	{
 		position.x -= speed;
-		direction = PlayerDirection::left;
-		state = PlayerState::move;
+
+		SetState(PlayerState::move);
+		SetDirection(PlayerDirection::left);
 
 		//SceneMgr::GetInstance()->GetScene()->position.x -= 5;
 	}
 
-	else if(InputMgr::GetInstance()->IsKeyDown(VK_RIGHT))
+	else if (InputMgr::GetInstance()->IsKeyDown(VK_RIGHT))
 	{
 		position.x += speed;
-		direction = PlayerDirection::right;
-		state = PlayerState::move;
+
+		SetState(PlayerState::move);
+		SetDirection(PlayerDirection::right);
 
 		//SceneMgr::GetInstance()->GetScene()->position.x += 5;
 	}
-		
+
 
 	if (InputMgr::GetInstance()->IsKeyDown(VK_UP))
 	{
 		position.y -= speed;
-		direction = PlayerDirection::up;
-		state = PlayerState::move;
+
+		SetState(PlayerState::move);
+		SetDirection(PlayerDirection::up);
 	}
 	else if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN))
 	{
 		position.y += speed;
-		direction = PlayerDirection::down;
-		state = PlayerState::move;
+
+		SetState(PlayerState::move);
+		SetDirection(PlayerDirection::down);
 	}
+
 
 	
 	//ÃÑ¾Ë °ø°Ý
@@ -81,35 +88,59 @@ void Player::OnUpdate()
 		BulletMgr::GetInstance()->RegisterBullet(bullet);
 	}
 
+	if (state == PlayerState::move)
+	{ 
+		switch (direction)
+		{
 
-	switch (direction)
-	{
+		case PlayerDirection::right:
+			right->Update();
+			break;
 
-	case PlayerDirection::right:
-		right->Update();
-		break;
-
-	case PlayerDirection::left:
-		left->Update();
-		break;
-		
+		case PlayerDirection::left:
+			left->Update();
+			break;
+		}
+	
 	}
 
 }
 
 void Player::OnDraw()
 {
-	switch (direction)
+	if (state == PlayerState::move)
 	{
+		switch (direction)
+		{
 
-	case PlayerDirection::right:
-		right->Draw();
-		break;
+		case PlayerDirection::right:
+			right->Draw();
+			break;
 
-	case PlayerDirection::left:
-		left->Draw();
-		break;
-
+		case PlayerDirection::left:
+			left->Draw();
+			break;
+		}
 
 	}
+}
+
+void Player::SetState(PlayerState::EnumType state)
+{
+	this->state = state;
+}
+
+void Player::SetDirection(PlayerDirection::EnumType direction)
+{
+	this->direction = direction;
+}
+
+PlayerState::EnumType Player::GetState()
+{
+	return state;
+}
+
+PlayerDirection::EnumType Player::GetDirection()
+{
+	return direction;
 }

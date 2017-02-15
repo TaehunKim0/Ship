@@ -38,7 +38,7 @@ void UnitSpawner::SpawnFriendly()
 		auto friendly = new Friendly("land");
 		unitList.push_back(friendly);
 
-		friendly->SetPosition(200, 100);
+		friendly->SetPosition(500, 500);
 
 	}
 

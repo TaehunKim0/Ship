@@ -60,11 +60,14 @@ void land_stage::OnUpdate()
 	//스코어 2000, 거북선 제작 완료
 		//로딩 씬 후 sea_stage
 
-	if(spawn)
-		unitSpawner->SpawnEnemy();
-	
 	if (spawn)
+	{
+		unitSpawner->SpawnEnemy();
 		unitSpawner->SpawnArrowTurret();
+		unitSpawner->SpawnFriendly();
+
+
+	}
 
 	spawn = false;
 }

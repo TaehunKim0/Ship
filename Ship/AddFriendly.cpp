@@ -18,7 +18,6 @@ AddFriendly::AddFriendly()
 	CanPlus->SetPosition(1080, 550);
 	CannotPlus->SetPosition(1080, 550);
 
-	
 }
 
 
@@ -51,6 +50,7 @@ void AddFriendly::OnUpdate()
 		break;
 	}
 
+	//만약 유닛 소환이 활성화된 상태일 때 소환버튼을 누르면 플러스 버튼이 나오고 누르면 그 자리에 랜덤으로 유닛생성됨(신기전 , 아군사람)
 
 }
 

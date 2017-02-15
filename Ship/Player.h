@@ -46,5 +46,12 @@ public:
 
 	void OnUpdate();
 	void OnDraw();
+
+	void SetState(PlayerState::EnumType state);
+	void SetDirection(PlayerDirection::EnumType direction);
+
+	PlayerState::EnumType GetState();
+	PlayerDirection::EnumType GetDirection();
+
 };
 
