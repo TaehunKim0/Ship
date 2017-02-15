@@ -4,9 +4,11 @@
 #include"Unit.h"
 #include"Friendly.h"
 #include"Enemy.h"
+#include"ArrowTurret.h"
 
 #include"land_stage.h"
 #include"sea_stage.h"
+
 UnitSpawner::UnitSpawner()
 {
 }
@@ -58,7 +60,7 @@ void UnitSpawner::SpawnEnemy()
 		auto enemy = new Enemy("land");
 		unitList.push_back(enemy);
 
-		enemy->SetPosition(700, 100);
+		enemy->SetPosition(1400, 100);
 	}
 
 	if (SceneMgr::GetInstance()->GetScene()->id == "sea")
@@ -69,5 +71,19 @@ void UnitSpawner::SpawnEnemy()
 		enemy->SetPosition(700, 100);
 	}
 
+	if (SceneMgr::GetInstance()->GetScene()->id == "Main")
+		printf("Main");
+
+	if (SceneMgr::GetInstance()->GetScene()->id == "Loading")
+		printf("Loading");
+
 	printf("Spawn Enemy!");
+}
+
+void UnitSpawner::SpawnArrowTurret()
+{
+	auto turret = new ArrowTurret();
+	unitList.push_back(turret);
+
+	turret->SetPosition(500, 100);
 }

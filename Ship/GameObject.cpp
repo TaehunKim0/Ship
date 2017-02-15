@@ -15,6 +15,7 @@ GameObject::GameObject()
 
 	childrenObjects.reserve(16);
 
+	visible = true;
 }
 
 GameObject::~GameObject()
@@ -32,6 +33,9 @@ void GameObject::OnDraw()
 
 void GameObject::Update()
 {
+	if (!visible)
+		return;
+
 	for (auto childObject : childrenObjects)
 	{
 		childObject->Update();
@@ -41,9 +45,13 @@ void GameObject::Update()
 
 void GameObject::Draw()
 {
+	if (!visible)
+		return;
+
 	//2d 변환 행렬 생성
 	D3DXMatrixTransformation2D(&matrix, &scaleCenter, 0.0f, &scale, &rotationCenter, rotation, &position);
 	//연산 결과 행렬, 스케일중심점, 확대 회전요소 지정, 확대율 지정, 회전 중심점, 회전 각도, 평행이동)
+
 	if (parentObject != NULL)
 		matrix *= parentObject->matrix;
 
@@ -94,6 +102,11 @@ void GameObject::ClearChildren()
 	childrenObjects.clear();
 
 
+}
+
+void GameObject::SetVisible(bool visible)
+{
+	this->visible = visible;
 }
 
 int GameObject::GetPositionX() const

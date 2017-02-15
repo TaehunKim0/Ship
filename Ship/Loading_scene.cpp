@@ -5,6 +5,8 @@
 
 Loading_scene::Loading_scene()
 {
+	id = "Loading";
+
 	loadingTurtle = Sprite::Create("Resources/turtle.png");
 
 	loadingTurtle->SetPosition(50, 400);
@@ -14,7 +16,8 @@ Loading_scene::Loading_scene()
 	this->AddChild(loadingBackground);
 	this->AddChild(loadingTurtle);
 
-	
+	cout << "Current Scene : " << id << endl;
+
 	auto timer = new Timer([]()
 	{
 		SceneMgr::GetInstance()->SetScene(new land_stage());

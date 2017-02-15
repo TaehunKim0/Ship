@@ -1,10 +1,8 @@
 #pragma once
-
-class Player;
 class Background;
-class Friendly;
-class Enemy;
 class UnitSpawner;
+class TurtleShip;
+class UI;
 
 class land_stage : public Scene
 {
@@ -14,8 +12,10 @@ private:
 
 	UnitSpawner* unitSpawner;
 
-	Friendly* friendly;
-	Enemy* enemy;
+	TurtleShip* turtleShip;
+
+	UI* ui;
+	bool spawn;
 
 
 public:

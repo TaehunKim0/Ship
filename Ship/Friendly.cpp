@@ -42,13 +42,13 @@ void Friendly::Move()
 void Friendly::OnUpdate()
 {
 	//일정시간마다
-	if (GameTime::CurrentFrame % 180 == 0)
+	if (GameTime::TotalFrame % 180 == 0)
 	{
 		Attack();
 	}
 
 	//만약 어느정도 이동하면 멈춤
-	Move();
+	//Move();
 	
 }
 

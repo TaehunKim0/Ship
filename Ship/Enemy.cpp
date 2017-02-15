@@ -18,14 +18,14 @@ Enemy::Enemy(string type)
 
 
 	this->AddChild(enemy);
-	this->AddChild(item);
+//	this->AddChild(item);
 	printf("New Enemy!");
 }
 
 
 Enemy::~Enemy()
 {
-	DropItem();
+//	DropItem();
 	
 }
 
@@ -41,13 +41,18 @@ void Enemy::Attack()
 
 void Enemy::Move()
 {
+	if (this->position.x == 1100)
+		return;
+
 	this->position.x -= speed;
+
+	
 }
 
 void Enemy::OnUpdate()
 {
 	//일정 시간마다
-	if (GameTime::CurrentFrame % 180 == 0)
+	if (GameTime::TotalFrame % 180 == 0)
 	{
 		Attack();
 	}

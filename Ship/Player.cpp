@@ -20,6 +20,7 @@ Player::Player() : speed(2.0f), health(5) , attack(1)
 
 	state = PlayerState::stand;
 
+	SetPosition(500, 100);
 }
 
 Player::~Player()
@@ -29,7 +30,6 @@ Player::~Player()
 
 void Player::OnUpdate()
 {
-
 	if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT))
 	{
 		position.x -= speed;
@@ -99,7 +99,6 @@ void Player::OnUpdate()
 
 void Player::OnDraw()
 {
-	
 	switch (direction)
 	{
 

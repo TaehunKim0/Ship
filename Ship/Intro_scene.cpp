@@ -4,6 +4,8 @@
 
 Intro_scene::Intro_scene()
 {
+	id = "Intro";
+
 	GameTime::CurrentFrame = 0;
 	Intro = new AnimationSprite(2, 150);
 	Intro->AddFrame(Sprite::Create("Resources/Intro/Intro1.png"));
@@ -12,6 +14,8 @@ Intro_scene::Intro_scene()
 	Intro->SetCurrentFrane(0);
 	Intro->parentObject = this;
 	Intro->SetAutoNext(true);
+
+	cout << "Current Scene : " << id << endl;
 
 	auto timer = new Timer([]()
 	{

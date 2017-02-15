@@ -15,7 +15,7 @@ public:
 	GameObject* parentObject;
 	std::vector<GameObject*> childrenObjects;
 
-
+	bool visible;
 public:
 	GameObject();
 	~GameObject();
@@ -36,6 +36,8 @@ public:
 	void ClearChildren();
 
 	string id;
+
+	void SetVisible(bool visible);
 
 	int GetPositionX() const;
 	int GetPositionY() const;

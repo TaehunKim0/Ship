@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddFriendly.cpp" />
     <ClCompile Include="AnimationSprite.cpp" />
+    <ClCompile Include="ArrowTurret.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletMgr.cpp" />
@@ -50,12 +52,16 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureMgr.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TurtleShip.cpp" />
+    <ClCompile Include="UI.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="UnitSpawner.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddFriendly.h" />
     <ClInclude Include="AnimationSprite.h" />
+    <ClInclude Include="ArrowTurret.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletMgr.h" />
@@ -86,6 +92,8 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureMgr.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="TurtleShip.h" />
+    <ClInclude Include="UI.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="UnitSpawner.h" />
   </ItemGroup>

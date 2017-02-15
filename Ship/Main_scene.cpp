@@ -5,6 +5,8 @@
 
 Main_scene::Main_scene() : menuIndex(0)
 {
+	id = "Main";
+
 	selectMenu = new AnimationSprite(1, 1);
 	selectMenu->AddFrame(Sprite::Create("Resources/UI/menu.png"));
 	selectMenu->AddFrame(Sprite::Create("Resources/UI/menu2.png"));
@@ -15,6 +17,8 @@ Main_scene::Main_scene() : menuIndex(0)
 	Main = Sprite::Create("Resources/Map/Main.png");
 	this->AddChild(Main);
 	this->AddChild(selectMenu);
+
+	cout << "Current Scene : " << id << endl;
 }
 
 Main_scene::~Main_scene()

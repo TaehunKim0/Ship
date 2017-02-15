@@ -73,10 +73,13 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	
 
 			GameTime::CurrentFrame++;
-			//if (GameTime::CurrentFrame > 60)
-			//	GameTime::CurrentFrame = 1;
+			if (GameTime::CurrentFrame > 60)
+				GameTime::CurrentFrame = 1;
 
 			GameTime::TotalFrame++;
+
+			printf("CurrentFrame : %d \n", GameTime::CurrentFrame);
+			printf("TotalFrame : %d \n", GameTime::TotalFrame);
 
 		}
 	}

@@ -7,6 +7,7 @@
 
 sea_stage::sea_stage()
 {
+	id = "Sea";
 	player = PlayerMgr::GetInstance()->GetPlayer();
 
 	friendly = new Friendly("sea");
@@ -17,6 +18,7 @@ sea_stage::sea_stage()
 	this->AddChild(friendly);
 	this->AddChild(enemy);
 
+	cout << "Current Scene : " << id << endl;
 }
 
 sea_stage::~sea_stage()

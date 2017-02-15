@@ -30,5 +30,5 @@ void Background::OnUpdate()
 
 void Background::OnDraw()
 {
-	printf("DRAW \n");
+	//printf("DRAW \n");
 }

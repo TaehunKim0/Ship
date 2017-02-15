@@ -121,8 +121,24 @@
     <ClCompile Include="Item.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="UnitSpawner.cpp" />
+    <ClCompile Include="Scene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitSpawner.cpp">
+      <Filter>Game\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrowTurret.cpp">
+      <Filter>Game\Unit\Friendly</Filter>
+    </ClCompile>
+    <ClCompile Include="AddFriendly.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TurtleShip.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMgr.h">
@@ -218,7 +234,23 @@
     <ClInclude Include="Item.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="UnitSpawner.h" />
+    <ClInclude Include="Scene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitSpawner.h">
+      <Filter>Game\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrowTurret.h">
+      <Filter>Game\Unit\Friendly</Filter>
+    </ClInclude>
+    <ClInclude Include="AddFriendly.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TurtleShip.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
