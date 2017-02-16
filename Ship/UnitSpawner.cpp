@@ -30,7 +30,7 @@ void UnitSpawner::OnDraw()
 		unit->Draw();
 }
 
-void UnitSpawner::SpawnFriendly()
+void UnitSpawner::SpawnFriendly(int x, int y)
 {
 
 	if(SceneMgr::GetInstance()->GetScene()->id == "land")	
@@ -38,8 +38,8 @@ void UnitSpawner::SpawnFriendly()
 		auto friendly = new Friendly("land");
 		unitList.push_back(friendly);
 
-		friendly->SetPosition(500, 500);
-
+		friendly->SetPosition(x, y);
+		//500 500
 	}
 
 	if (SceneMgr::GetInstance()->GetScene()->id == "sea")
@@ -47,12 +47,13 @@ void UnitSpawner::SpawnFriendly()
 		auto friendly = new Friendly("sea");
 		unitList.push_back(friendly);
 
-		friendly->SetPosition(200, 100);
+		friendly->SetPosition(x, y);
+
 	}
 	printf("Spawn Friendy!");
 }
 
-void UnitSpawner::SpawnEnemy()
+void UnitSpawner::SpawnEnemy(int x, int y)
 {
 	cout << "Current Scene : " << SceneMgr::GetInstance()->GetScene()->id << endl;
 	if (SceneMgr::GetInstance()->GetScene()->id == "land")
@@ -60,7 +61,8 @@ void UnitSpawner::SpawnEnemy()
 		auto enemy = new Enemy("land");
 		unitList.push_back(enemy);
 
-		enemy->SetPosition(1400, 100);
+		enemy->SetPosition(x, y);
+		//1400 100
 	}
 
 	if (SceneMgr::GetInstance()->GetScene()->id == "sea")
@@ -68,7 +70,7 @@ void UnitSpawner::SpawnEnemy()
 		auto enemy = new Enemy("sea");
 		unitList.push_back(enemy);
 
-		enemy->SetPosition(700, 100);
+		enemy->SetPosition(x, y);
 	}
 
 	if (SceneMgr::GetInstance()->GetScene()->id == "Main")
@@ -80,10 +82,11 @@ void UnitSpawner::SpawnEnemy()
 	printf("Spawn Enemy!");
 }
 
-void UnitSpawner::SpawnArrowTurret()
+void UnitSpawner::SpawnArrowTurret(int x, int y)
 {
 	auto turret = new ArrowTurret();
 	unitList.push_back(turret);
 
-	turret->SetPosition(500, 100);
+	turret->SetPosition(x, y);
+	//500 100
 }

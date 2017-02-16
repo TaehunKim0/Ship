@@ -19,9 +19,9 @@ public:
 	void OnDraw();
 
 
-	void SpawnFriendly();
-	void SpawnEnemy();
-	void SpawnArrowTurret();
+	void SpawnFriendly(int x , int y);
+	void SpawnEnemy(int x, int y);
+	void SpawnArrowTurret(int x, int y);
 
 
 };

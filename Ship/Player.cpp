@@ -52,7 +52,6 @@ void Player::OnUpdate()
 		//SceneMgr::GetInstance()->GetScene()->position.x += 5;
 	}
 
-
 	if (InputMgr::GetInstance()->IsKeyDown(VK_UP))
 	{
 		position.y -= speed;
@@ -67,8 +66,6 @@ void Player::OnUpdate()
 		SetState(PlayerState::move);
 		SetDirection(PlayerDirection::down);
 	}
-
-
 	
 	//ÃÑ¾Ë °ø°Ý
 	if (InputMgr::GetInstance()->IsKeyDown(VK_SPACE) & GameTime::CurrentFrame % 10 == 0)

@@ -44,29 +44,27 @@ void land_stage::OnUpdate()
 
 
 	//스코어가 600, 1단 완성
-	if (GameTime::TotalFrame == 600)
-		turtleShip->SetTurtleShipForm(TurtleShipForm::Form2);
-
-
-	if (GameTime::TotalFrame == 900)
-		turtleShip->SetTurtleShipForm(TurtleShipForm::Form3);
+	
 
 	//스코어 1200, 2단 완성
 
+	if (GameTime::TotalFrame == 600)
+		turtleShip->SetTurtleShipForm(TurtleShipForm::Form2);
+	
 
 	//스코어 1800, 3단 완성
 
+	if (GameTime::TotalFrame == 00)
+		turtleShip->SetTurtleShipForm(TurtleShipForm::Form3);
 
 	//스코어 2000, 거북선 제작 완료
 		//로딩 씬 후 sea_stage
 
 	if (spawn)
 	{
-		unitSpawner->SpawnEnemy();
-		unitSpawner->SpawnArrowTurret();
-		unitSpawner->SpawnFriendly();
-
-
+		unitSpawner->SpawnEnemy(1400, 100);
+		unitSpawner->SpawnArrowTurret(500 , 100);
+		unitSpawner->SpawnFriendly(500,500);
 	}
 
 	spawn = false;
