@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 class InputMgr : public SingleTon<InputMgr>
 {
 private:
@@ -7,6 +9,7 @@ private:
 
 	HWND hWindow;
 
+	
 public:
 	InputMgr();
 	~InputMgr();
@@ -15,11 +18,13 @@ public:
 	void Update();
 
 public:
+
 	D3DXVECTOR2 GetMousePosition();
 
 	bool IsKeyDown(int key);
 
 	bool IsKeyPress(int key);
 
+	
 };
 

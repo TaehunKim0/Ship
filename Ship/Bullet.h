@@ -13,6 +13,10 @@ class Bullet : public GameObject
 {
 private:
 	float speed;
+	float Demage;
+
+	float LifeTime;
+
 
 public:
 	Bullet(string id);

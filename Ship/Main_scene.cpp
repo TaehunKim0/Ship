@@ -59,7 +59,7 @@ void Main_scene::OnUpdate()
 	}
 
 	if (InputMgr::GetInstance()->IsKeyDown('P'))
-		SceneMgr::GetInstance()->SetScene(new land_stage());
+		SceneMgr::GetInstance()->SetScene(new land_stage("land"));
 
 
 	if (InputMgr::GetInstance()->IsKeyDown(VK_RETURN))

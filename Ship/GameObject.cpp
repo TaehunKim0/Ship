@@ -23,6 +23,7 @@ GameObject::~GameObject()
 	ClearChildren();
 }
 
+
 void GameObject::OnUpdate()
 {
 }

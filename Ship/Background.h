@@ -8,7 +8,7 @@ private:
 	Player* player;
 
 public:
-	Background(string background);
+	Background();
 	~Background();
 
 	void OnUpdate() override;

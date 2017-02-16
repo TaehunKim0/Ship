@@ -13,6 +13,7 @@ AddFriendly::AddFriendly()
 	AddChild(CanPlus);
 	AddChild(CannotPlus);
 	
+	Plus->SetVisible(false);
 	SetActivation(AddActivation::Cannot);
 
 	CanPlus->SetPosition(1080, 550);
@@ -28,10 +29,6 @@ AddFriendly::~AddFriendly()
 
 void AddFriendly::OnUpdate()
 {
-	if (GameTime::TotalFrame == 500)
-	{
-		SetActivation(AddActivation::Can);
-	}
 
 	switch (addActivation)
 	{

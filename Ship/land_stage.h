@@ -17,9 +17,9 @@ private:
 	UI* ui;
 	bool spawn;
 
-
+	
 public:
-	land_stage();
+	land_stage(string id);
 	~land_stage();
 
 	void OnUpdate() override;

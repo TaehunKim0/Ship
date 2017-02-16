@@ -20,7 +20,7 @@ Loading_scene::Loading_scene()
 
 	auto timer = new Timer([]()
 	{
-		SceneMgr::GetInstance()->SetScene(new land_stage());
+		SceneMgr::GetInstance()->SetScene(new land_stage("land"));
 	}, 6000);
 
 	timer->Run();

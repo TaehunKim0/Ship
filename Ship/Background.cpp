@@ -3,21 +3,21 @@
 #include"Sprite.h"
 #include"Player.h"
 
-Background::Background(string background)
+Background::Background()
 {
-	if (background == "land")
+	if (SceneMgr::GetInstance()->GetScene()->id == "land")
 	{
 		this->background = Sprite::Create("Resources/Map/land.png");
 	};
 
-	if (background == "sea") 
+	if (SceneMgr::GetInstance()->GetScene()->id == "sea")
 	{
-
+		this->background = Sprite::Create("Resources/Map/sea.png");
 	};
 
 	this->background->parentObject = this;
 	this->AddChild(this->background);
-}         
+}      
 
 Background::~Background()
 {

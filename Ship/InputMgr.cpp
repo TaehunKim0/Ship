@@ -25,6 +25,7 @@ void InputMgr::Update()
 
 	this->mousePosition.x = static_cast<float>(point.x);
 	this->mousePosition.y = static_cast<float>(point.y);
+
 }
 
 D3DXVECTOR2 InputMgr::GetMousePosition()

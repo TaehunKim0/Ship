@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "land_stage.h"
+#include"Scene.h"
 
 #include"Sprite.h"
 #include"Player.h"
@@ -8,12 +9,11 @@
 #include"TurtleShip.h"
 #include"UI.h"
 
-land_stage::land_stage()
+
+land_stage::land_stage(string id) : Scene(id)
 {
-	
-	id = "land";
 	player = PlayerMgr::GetInstance()->GetPlayer();
-	background = new Background("land");
+	background = new Background();
 	unitSpawner = new UnitSpawner();
 	turtleShip = new TurtleShip();
 	ui = new UI();

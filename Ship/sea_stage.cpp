@@ -1,22 +1,26 @@
 #include "stdafx.h"
 #include "sea_stage.h"
 #include"Player.h"
-#include"Friendly.h"
-#include"Enemy.h"
+#include"UnitSpawner.h"
+#include"Background.h"
+#include"UI.h"
+
 #include"End_scene.h"
 
 sea_stage::sea_stage()
 {
 	id = "Sea";
 	player = PlayerMgr::GetInstance()->GetPlayer();
+	background = new Background();
+	unitSpawner = new UnitSpawner();
 
-	friendly = new Friendly("sea");
-	enemy = new Enemy("sea");
+	ui = new UI();
 
-
-	this->AddChild(player);
-	this->AddChild(friendly);
-	this->AddChild(enemy);
+	AddChild(background);
+	AddChild(player);
+	AddChild(unitSpawner);
+	AddChild(ui);
+	AddChild(BulletMgr::GetInstance());
 
 	cout << "Current Scene : " << id << endl;
 }
