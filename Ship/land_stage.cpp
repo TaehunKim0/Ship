@@ -8,7 +8,7 @@
 #include"UnitSpawner.h"
 #include"TurtleShip.h"
 #include"UI.h"
-
+#include"sea_stage.h"
 
 land_stage::land_stage(string id) : Scene(id)
 {
@@ -58,7 +58,8 @@ void land_stage::OnUpdate()
 		turtleShip->SetTurtleShipForm(TurtleShipForm::Form3);
 
 	//스코어 2000, 거북선 제작 완료
-		//로딩 씬 후 sea_stage
+		//로딩 씬 후 
+	//SceneMgr::GetInstance()->SetScene(new sea_stage("sea"));
 
 	if (spawn)
 	{

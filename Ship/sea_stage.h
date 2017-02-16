@@ -14,7 +14,7 @@ private:
 
 
 public:
-	sea_stage();
+	sea_stage(string id);
 	~sea_stage();
 
 	void OnUpdate() override;

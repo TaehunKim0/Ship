@@ -7,9 +7,8 @@
 
 #include"End_scene.h"
 
-sea_stage::sea_stage()
+sea_stage::sea_stage(string id) :Scene(id)
 {
-	id = "Sea";
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new Background();
 	unitSpawner = new UnitSpawner();

@@ -23,6 +23,7 @@
     <ClCompile Include="AnimationSprite.cpp" />
     <ClCompile Include="ArrowTurret.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="BossEnemy.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletMgr.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
@@ -63,6 +64,7 @@
     <ClInclude Include="AnimationSprite.h" />
     <ClInclude Include="ArrowTurret.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="BossEnemy.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletMgr.h" />
     <ClInclude Include="CollisionMgr.h" />
