@@ -28,6 +28,7 @@ Main_scene::~Main_scene()
 
 void Main_scene::OnUpdate()
 {
+
 	menuIndex = min(max(menuIndex, 0), 1);
 
 	if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN))

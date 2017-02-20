@@ -30,7 +30,11 @@ public:
 	virtual void Update();
 	virtual void Draw();
 
+	GameObject* GetParent() { return parentObject; }
+	void SetParent(GameObject* obj) { parentObject = obj; }
+
 	D3DXVECTOR2 GetPosition() const;
+
 	void SetPosition(int x, int y);
 	void SetPosition(D3DXVECTOR2 position);
 
@@ -40,7 +44,7 @@ public:
 	void ClearChildren();
 
 
-
+	bool GetVisisble() { return visible; }
 	void SetVisible(bool visible);
 
 	int GetPositionX() const;

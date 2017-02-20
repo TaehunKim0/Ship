@@ -3,7 +3,7 @@
 #include"Unit.h"
 class Bullet;
 class Item;
-class Enemy  : public Unit
+class Enemy  : public Unit 
 {
 private:
 

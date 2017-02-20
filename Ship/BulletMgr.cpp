@@ -23,4 +23,3 @@ void BulletMgr::OnUpdate()
 void BulletMgr::OnDraw()
 {
 }
-

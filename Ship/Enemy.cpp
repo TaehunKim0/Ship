@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include"Enemy.h"
+
 #include"Bullet.h"
 #include"Item.h"
+#include"CircleCollider.h"
 
 Enemy::Enemy(string type)
 {

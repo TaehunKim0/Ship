@@ -91,9 +91,6 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Game\Player</Filter>
     </ClCompile>
-    <ClCompile Include="BulletMgr.cpp">
-      <Filter>Game\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Game\Player</Filter>
     </ClCompile>
@@ -138,6 +135,16 @@
     </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="BossEnemy.cpp" />
+    <ClCompile Include="Collider.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleCollider.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMgr.cpp">
+      <Filter>Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -204,12 +211,6 @@
     <ClInclude Include="Bullet.h">
       <Filter>Game\Player</Filter>
     </ClInclude>
-    <ClInclude Include="BulletMgr.h">
-      <Filter>Game\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Game\Player</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
@@ -251,6 +252,19 @@
     </ClInclude>
     <ClInclude Include="UI.h">
       <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="BossEnemy.h" />
+    <ClInclude Include="Collider.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleCollider.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMgr.h">
+      <Filter>Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

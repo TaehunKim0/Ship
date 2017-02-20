@@ -55,7 +55,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	GameMgr::GetInstance()->Init(hwindow, true);
 
-	SceneMgr::GetInstance()->SetScene(new Main_scene());
+	SceneMgr::GetInstance()->SetScene(new Main_scene()); //SetScene은 Main_Scene을 생성하고 나서 실행된다.
 
 	MSG msg = {};
 

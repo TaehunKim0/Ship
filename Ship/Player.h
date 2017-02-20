@@ -24,6 +24,7 @@ namespace PlayerDirection
 	};
 }
 
+class CircleCollider;
 class Player : public GameObject
 {
 private:

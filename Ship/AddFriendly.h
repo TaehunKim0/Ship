@@ -22,7 +22,6 @@ public:
 	AddFriendly();
 	~AddFriendly();
 
-
 	void OnUpdate();
 	void OnDraw();
 

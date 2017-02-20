@@ -1,8 +1,11 @@
 #include "stdafx.h"
 #include "Player.h"
+
 #include"Bullet.h"
 #include"Sprite.h"
 #include"Texture.h"
+#include"Collider.h"
+#include"CircleCollider.h"
 
 Player::Player() : speed(2.0f), health(5) , attack(1)
 {
@@ -23,6 +26,8 @@ Player::Player() : speed(2.0f), health(5) , attack(1)
 	SetDirection(PlayerDirection::right);
 
 	SetPosition(500, 100);
+
+
 }
 
 Player::~Player()
@@ -32,9 +37,12 @@ Player::~Player()
 
 void Player::OnUpdate()
 {
+	bool checkInput = false;
+
 	if (InputMgr::GetInstance()->IsKeyDown(VK_LEFT))
 	{
 		position.x -= speed;
+		checkInput = true;
 
 		SetState(PlayerState::move);
 		SetDirection(PlayerDirection::left);
@@ -45,6 +53,7 @@ void Player::OnUpdate()
 	else if (InputMgr::GetInstance()->IsKeyDown(VK_RIGHT))
 	{
 		position.x += speed;
+		checkInput = true;
 
 		SetState(PlayerState::move);
 		SetDirection(PlayerDirection::right);
@@ -55,23 +64,31 @@ void Player::OnUpdate()
 	if (InputMgr::GetInstance()->IsKeyDown(VK_UP))
 	{
 		position.y -= speed;
+		checkInput = true;
 
 		SetState(PlayerState::move);
-		SetDirection(PlayerDirection::up);
+		
 	}
 	else if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN))
 	{
 		position.y += speed;
+		checkInput = true;
 
 		SetState(PlayerState::move);
-		SetDirection(PlayerDirection::down);
+		
+	}
+
+	if (!checkInput)
+	{
+		// 아무것도 입력안됨
+		SetState(PlayerState::stand);
 	}
 	
 	//총알 공격
 	if (InputMgr::GetInstance()->IsKeyDown(VK_SPACE) & GameTime::CurrentFrame % 10 == 0)
 	{
 		auto bullet = new Bullet("Player");
-		bullet->SetPosition(GetPosition() + (right->GetSize() / 2) - (bullet->bullet->GetSize() / 2));
+		bullet->SetPosition(this->GetPosition() + (right->GetSize() / 2) - (bullet->bullet->GetSize() / 2));
 		
 		if (direction == PlayerDirection::left)
 			bullet->direction = bulletDirection::left;
@@ -89,7 +106,6 @@ void Player::OnUpdate()
 	{ 
 		switch (direction)
 		{
-
 		case PlayerDirection::right:
 			right->Update();
 			break;
@@ -101,24 +117,35 @@ void Player::OnUpdate()
 	
 	}
 
+
 }
 
 void Player::OnDraw()
 {
-	if (state == PlayerState::move)
+	//if (state == PlayerState::move)
+	//{
+	//	switch (direction)
+	//	{
+
+	//	case PlayerDirection::right:
+	//		right->Draw();
+	//		break;
+
+	//	case PlayerDirection::left:
+	//		left->Draw();
+	//		break;
+	//	}
+	//}
+	switch (direction)
 	{
-		switch (direction)
-		{
 
-		case PlayerDirection::right:
-			right->Draw();
-			break;
+	case PlayerDirection::right:
+		right->Draw();
+		break;
 
-		case PlayerDirection::left:
-			left->Draw();
-			break;
-		}
-
+	case PlayerDirection::left:
+		left->Draw();
+		break;
 	}
 }
 
