@@ -7,4 +7,6 @@ private:
 public:
 	CollisionMgr();
 	~CollisionMgr();
+
+	bool IsPointInRect(Sprite * sprite);
 };

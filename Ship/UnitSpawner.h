@@ -4,7 +4,7 @@ class Friendly;
 class Enemy;
 class Unit;
 
-class UnitSpawner : public GameObject
+class UnitSpawner : public GameObject, public SingleTon<UnitSpawner>
 {
 private:
 

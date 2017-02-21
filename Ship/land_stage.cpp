@@ -46,21 +46,24 @@ void land_stage::OnUpdate()
 
 
 	//스코어가 600, 1단 완성
-	
+	if (GameTime::TotalFrame == 300)
+		turtleShip->SetTurtleShipForm(TurtleShipForm::Form1);
 
 	//스코어 1200, 2단 완성
-
 	if (GameTime::TotalFrame == 600)
 		turtleShip->SetTurtleShipForm(TurtleShipForm::Form2);
 	
 
 	//스코어 1800, 3단 완성
-
-	if (GameTime::TotalFrame == 00)
+	if (GameTime::TotalFrame == 800)
 		turtleShip->SetTurtleShipForm(TurtleShipForm::Form3);
+
 
 	//스코어 2000, 거북선 제작 완료
 		//로딩 씬 후 
+	if (GameTime::TotalFrame == 1000)
+		turtleShip->SetTurtleShipForm(TurtleShipForm::Form4);
+
 	//SceneMgr::GetInstance()->SetScene(new sea_stage("sea"));
 
 	if (spawn)

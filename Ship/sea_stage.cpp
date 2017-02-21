@@ -33,8 +33,6 @@ void sea_stage::OnUpdate()
 {
 	//바다 배경으로 바뀜
 
-
-
 	//wave 1
 	
 

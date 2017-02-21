@@ -78,8 +78,8 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 			GameTime::TotalFrame++;
 
-			printf("CurrentFrame : %d \n", GameTime::CurrentFrame);
-			printf("TotalFrame : %d \n", GameTime::TotalFrame);
+			//printf("CurrentFrame : %d \n", GameTime::CurrentFrame);
+			//printf("TotalFrame : %d \n", GameTime::TotalFrame);
 
 		}
 	}

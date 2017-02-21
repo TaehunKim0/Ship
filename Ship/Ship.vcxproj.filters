@@ -136,7 +136,6 @@
     <ClCompile Include="UI.cpp">
       <Filter>Game\UI</Filter>
     </ClCompile>
-    <ClCompile Include="BossEnemy.cpp" />
     <ClCompile Include="Collider.cpp">
       <Filter>Core</Filter>
     </ClCompile>
@@ -145,6 +144,12 @@
     </ClCompile>
     <ClCompile Include="BulletMgr.cpp">
       <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="BossEnemy.cpp">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="AddFriendly_Plus.cpp">
+      <Filter>Game\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -253,7 +258,6 @@
     <ClInclude Include="UI.h">
       <Filter>Game\UI</Filter>
     </ClInclude>
-    <ClInclude Include="BossEnemy.h" />
     <ClInclude Include="Collider.h">
       <Filter>Core</Filter>
     </ClInclude>
@@ -265,6 +269,12 @@
     </ClInclude>
     <ClInclude Include="BulletMgr.h">
       <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="BossEnemy.h">
+      <Filter>Game\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="AddFriendly_Plus.h">
+      <Filter>Game\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

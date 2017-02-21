@@ -29,6 +29,6 @@
 #include"Sprite.h"
 #include"BulletMgr.h"
 #include"Scene.h"
-
+#include"CollisionMgr.h"
 #define SAFE_DELETE(x) { if(x) { delete x; x = NULL; } }
 #define SAFE_RELEASE(x) { if(x) { x->Release(); x = NULL; } }

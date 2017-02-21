@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddFriendly.cpp" />
+    <ClCompile Include="AddFriendly_Plus.cpp" />
     <ClCompile Include="AnimationSprite.cpp" />
     <ClCompile Include="ArrowTurret.cpp" />
     <ClCompile Include="Background.cpp" />
@@ -63,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddFriendly.h" />
+    <ClInclude Include="AddFriendly_Plus.h" />
     <ClInclude Include="AnimationSprite.h" />
     <ClInclude Include="ArrowTurret.h" />
     <ClInclude Include="Background.h" />
