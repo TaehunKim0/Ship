@@ -151,6 +151,9 @@
     <ClCompile Include="AddFriendly_Plus.cpp">
       <Filter>Game\UI</Filter>
     </ClCompile>
+    <ClCompile Include="HpBar.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMgr.h">
@@ -274,6 +277,9 @@
       <Filter>Game\Unit\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="AddFriendly_Plus.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="HpBar.h">
       <Filter>Game\UI</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,7 +19,8 @@ TurtleShip::TurtleShip()
 	worker->AddFrame(Sprite::Create("Resources/Unit/worker1.png"));
 	worker->AddFrame(Sprite::Create("Resources/Unit/worker2.png"));
 	worker->parentObject = this;
-
+	form2->position.y -= 10;
+	form3->position.y -= 12;
 	AddChild(form1);
 	AddChild(form2);
 	AddChild(form3);

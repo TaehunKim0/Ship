@@ -23,13 +23,14 @@ namespace PlayerDirection
 		down =4
 	};
 }
-
+class HpBar;
 class CircleCollider;
 class Player : public GameObject
 {
 private:
 	AnimationSprite* right;
 	AnimationSprite* left;
+	HpBar* m_hp;
 
 	int health;
 	float speed;

@@ -4,11 +4,11 @@
 #include"Bullet.h"
 #include"Sprite.h"
 #include"Texture.h"
-#include"Collider.h"
-#include"CircleCollider.h"
+#include"HpBar.h"
 
 Player::Player() : speed(2.0f), health(5) , attack(1)
 {
+	m_hp = new HpBar();
 
 	right = new AnimationSprite(1, 10);
 	right->parentObject = this;
@@ -26,7 +26,9 @@ Player::Player() : speed(2.0f), health(5) , attack(1)
 	SetDirection(PlayerDirection::right);
 
 	SetPosition(500, 100);
-
+	
+	AddChild(m_hp);
+	m_hp->parentObject = m_hp;
 
 }
 
@@ -100,6 +102,7 @@ void Player::OnUpdate()
 			printf("Bullet ELSE \n");
 
 		BulletMgr::GetInstance()->RegisterBullet(bullet);
+
 	}
 
 	if (state == PlayerState::move)
@@ -122,20 +125,6 @@ void Player::OnUpdate()
 
 void Player::OnDraw()
 {
-	//if (state == PlayerState::move)
-	//{
-	//	switch (direction)
-	//	{
-
-	//	case PlayerDirection::right:
-	//		right->Draw();
-	//		break;
-
-	//	case PlayerDirection::left:
-	//		left->Draw();
-	//		break;
-	//	}
-	//}
 	switch (direction)
 	{
 
