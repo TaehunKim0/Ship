@@ -14,11 +14,19 @@ TurtleShip::TurtleShip()
 	form3->SetVisible(false);
 	form4->SetVisible(false);
 
+	worker = new AnimationSprite(1, 10);
+
+	worker->AddFrame(Sprite::Create("Resources/Unit/worker1.png"));
+	worker->AddFrame(Sprite::Create("Resources/Unit/worker2.png"));
+	worker->parentObject = this;
+
 	AddChild(form1);
 	AddChild(form2);
 	AddChild(form3);
 	AddChild(form4);
+	AddChild(worker);
 
+	worker->SetPosition(30, 180);
 	this->SetPosition(0, 150);
 }
 

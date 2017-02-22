@@ -12,28 +12,26 @@
 
 land_stage::land_stage(string id) : Scene(id)
 {
-	std::string a = this->id;
-
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new Background();
-	unitSpawner = new UnitSpawner();
 	turtleShip = new TurtleShip();
 	ui = new UI();
 
+	
 	this->AddChild(background);
 	this->AddChild(player);
 	this->AddChild(BulletMgr::GetInstance());
-	this->AddChild(unitSpawner);
+	this->AddChild(UnitSpawner::GetInstance());
 	this->AddChild(turtleShip);
 	this->AddChild(ui);
 	
+
 	background->SetBackGround(Sprite::Create("Resources/Map/land.png"));
 
 	cout << "Current Scene : " << id << endl;
 
 	spawn = true;
 
-	
 }
 
 land_stage::~land_stage()
@@ -68,9 +66,9 @@ void land_stage::OnUpdate()
 
 	if (spawn)
 	{
-		unitSpawner->SpawnEnemy(1400, 100);
-		unitSpawner->SpawnArrowTurret(500 , 100);
-		unitSpawner->SpawnFriendly(500,500);
+		unitSpawner->GetInstance()->SpawnEnemy(1400, 100);
+		unitSpawner->GetInstance()->SpawnArrowTurret(500 , 100);
+		unitSpawner->GetInstance()->SpawnFriendly(500,500);
 	}
 
 	spawn = false;

@@ -2,29 +2,26 @@
 #include "AddFriendly.h"
 #include"AddFriendly_Plus.h"
 
-AddFriendly::AddFriendly()
+AddFriendly::AddFriendly() : p(0)
 {
 	CanPlus = Sprite::Create("Resources/UI/CanPlus.png");
 	CannotPlus = Sprite::Create("Resources/UI/CannotPlus.png");
-	int p = 0;
-	for (int i = 0; i < 3; i++)
+
+	for (int i = 0; i < 4; i++)
 	{
 		plus[i] = new AddFriendly_Plus();
 		AddChild(plus[i]);
 		plus[i]->SetVisible(false);
 
-		plus[i]->SetPosition(500, 500+p);
-		p += 250;
+		plus[i]->SetPosition(500, 50+p);
+		p += 150;
 	}
 
 	AddChild(CanPlus);
 	AddChild(CannotPlus);
 	
-	
-
 	CanPlus->SetPosition(1080, 550);
 	CannotPlus->SetPosition(1080, 550);
-
 
 	SetActivation(AddActivation::Cannot);
 	SetUIState(UIState::Not);
@@ -47,7 +44,7 @@ void AddFriendly::OnUpdate()
 		if (InputMgr::GetInstance()->IsKeyDown(VK_LBUTTON))
 		{
 			printf("마우스 클릭 \n");
-			for (int i = 0; i < 3; i++)
+			for (int i = 0; i < 4; i++)
 			{
 				plus[i]->SetVisible(true);
 			}
@@ -73,6 +70,8 @@ void AddFriendly::OnUpdate()
 	if(CollisionMgr::GetInstance()->IsPointInRect(CanPlus))
 		SetUIState(UIState::Hover);
 
+	else
+		SetUIState(UIState::Not);
 	//만약 유닛 소환이 활성화된 상태일 때 소환버튼을 누르면 플러스 버튼이 나오고 누르면 그 자리에 랜덤으로 유닛생성됨(신기전 , 아군사람)
 
 }

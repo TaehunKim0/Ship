@@ -24,11 +24,11 @@ class AddFriendly : public GameObject
 private:
 	Sprite* CanPlus;
 	Sprite* CannotPlus;
-	AddFriendly_Plus* plus[3];
+	AddFriendly_Plus* plus[4];
 
 	AddActivation::Enum addActivation;
 	UIState::Enum uiState;
-
+	int p;
 public:
 	AddFriendly();
 	~AddFriendly();

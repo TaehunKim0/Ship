@@ -20,6 +20,8 @@ private:
 	Sprite* form3;
 	Sprite* form4;
 
+	AnimationSprite* worker;
+
 public:
 	TurtleShip();
 	~TurtleShip();
