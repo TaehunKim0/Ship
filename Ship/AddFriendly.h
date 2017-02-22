@@ -28,7 +28,7 @@ private:
 
 	AddActivation::Enum addActivation;
 	UIState::Enum uiState;
-	int p;
+
 public:
 	AddFriendly();
 	~AddFriendly();

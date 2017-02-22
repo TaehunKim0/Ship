@@ -2,10 +2,11 @@
 #include "AddFriendly.h"
 #include"AddFriendly_Plus.h"
 
-AddFriendly::AddFriendly() : p(0)
+AddFriendly::AddFriendly()
 {
 	CanPlus = Sprite::Create("Resources/UI/CanPlus.png");
 	CannotPlus = Sprite::Create("Resources/UI/CannotPlus.png");
+	int xx =0, yy = 0;
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -13,8 +14,9 @@ AddFriendly::AddFriendly() : p(0)
 		AddChild(plus[i]);
 		plus[i]->SetVisible(false);
 
-		plus[i]->SetPosition(500, 50+p);
-		p += 150;
+		plus[i]->SetPosition(700-xx, 100+yy);
+		yy += 150;
+		xx += 70;
 	}
 
 	AddChild(CanPlus);
@@ -43,12 +45,22 @@ void AddFriendly::OnUpdate()
 	if(GetActivation() == AddActivation::Can)
 		if (InputMgr::GetInstance()->IsKeyDown(VK_LBUTTON))
 		{
-			printf("마우스 클릭 \n");
 			for (int i = 0; i < 4; i++)
 			{
 				plus[i]->SetVisible(true);
 			}
 		}
+	//버튼을 눌렀을 떄 모두 Visible을 킨다.
+
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (!plus[i]->visible)
+			for (int i = 0; i < 4; i++)
+				plus[i]->SetVisible(false);
+
+	}//하나라도 Visible이 꺼지면 모두 visible을 끈다.
+
 
 	switch (addActivation)
 	{
@@ -71,7 +83,11 @@ void AddFriendly::OnUpdate()
 		SetUIState(UIState::Hover);
 
 	else
+	{
 		SetUIState(UIState::Not);
+		SetActivation(AddActivation::Cannot);
+	}
+
 	//만약 유닛 소환이 활성화된 상태일 때 소환버튼을 누르면 플러스 버튼이 나오고 누르면 그 자리에 랜덤으로 유닛생성됨(신기전 , 아군사람)
 
 }

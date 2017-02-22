@@ -12,5 +12,7 @@ public:
 
 	void OnUpdate();
 	void OnDraw();
+
+	void Damaged();
 };
 

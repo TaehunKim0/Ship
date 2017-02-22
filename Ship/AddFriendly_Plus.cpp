@@ -27,13 +27,17 @@ void AddFriendly_Plus::OnUpdate()
 		SetVisible(false);
 
 	if (CollisionMgr::GetInstance()->IsPointInRect(plus))
+	{
 		SetPlusState(PlusState::Hover);
-
+		printf("PLUS_HOVER \n");
+	}
+	
 	if (GetPlusState() == PlusState::Hover)
 		if (InputMgr::GetInstance()->IsKeyDown(VK_LBUTTON))
 		{
 			printf("Plus Pressed\n");
-			//UnitSpawner::GetInstance()->SpawnFriendly(position.x, position.y);
+			SetVisible(false);
+			UnitSpawner::GetInstance()->SpawnFriendly(position.x, position.y);
 		}
 }
 

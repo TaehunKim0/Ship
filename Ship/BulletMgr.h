@@ -4,7 +4,7 @@ class BulletMgr : public GameObject, public SingleTon<BulletMgr>
 {
 private:
 	std::vector<Bullet*> bulletList;
-
+	
 public:
 	BulletMgr();
 	~BulletMgr();

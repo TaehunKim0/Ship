@@ -14,14 +14,10 @@ Bullet::Bullet(string id) : speed(3.0f) , LifeTime(0)
 	if (id == "Enemy")
 		bullet = Sprite::Create("Resources/bullet/UnitBullet.png");
 
-
-
 	bullet->parentObject = this;
 	this->AddChild(bullet);
 
 	direction = bulletDirection::right;
-
-	
 }
 
 
@@ -32,7 +28,6 @@ Bullet::~Bullet()
 void Bullet::OnUpdate()
 {
 	LifeTime++;
-
 	switch (direction)
 	{
 	case bulletDirection::left:
@@ -48,13 +43,8 @@ void Bullet::OnUpdate()
 	}
 
 	//만약 총알이 발사된지 5초가 지나면 없어짐
-
 	if (LifeTime == 300)
-	{
 		this->SetVisible(false);
-	}
-
-
 }
 
 void Bullet::OnDraw()

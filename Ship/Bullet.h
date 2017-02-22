@@ -15,15 +15,13 @@ private:
 	float speed;
 	float Demage;
 
-	float LifeTime;
-
 
 public:
 	Bullet(string id);
 	~Bullet();
 	Sprite* bullet;
 	bulletDirection::EnumType direction;
-	
+	int LifeTime;
 
 	void OnUpdate();
 	void OnDraw();

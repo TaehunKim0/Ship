@@ -50,7 +50,6 @@ void land_stage::OnUpdate()
 	//스코어 1200, 2단 완성
 	if (GameTime::TotalFrame == 600)
 		turtleShip->SetTurtleShipForm(TurtleShipForm::Form2);
-	
 
 	//스코어 1800, 3단 완성
 	if (GameTime::TotalFrame == 800)
@@ -66,9 +65,9 @@ void land_stage::OnUpdate()
 
 	if (spawn)
 	{
-		unitSpawner->GetInstance()->SpawnEnemy(1400, 100);
-		unitSpawner->GetInstance()->SpawnArrowTurret(500 , 100);
-		unitSpawner->GetInstance()->SpawnFriendly(500,500);
+		//unitSpawner->GetInstance()->SpawnEnemy(1400, 100);
+		//unitSpawner->GetInstance()->SpawnArrowTurret(500 , 100);
+		//unitSpawner->GetInstance()->SpawnFriendly(500,500);
 	}
 
 	spawn = false;

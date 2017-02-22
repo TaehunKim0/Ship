@@ -6,7 +6,7 @@
 #include"Texture.h"
 #include"HpBar.h"
 
-Player::Player() : speed(2.0f), health(5) , attack(1)
+Player::Player() : speed(2.0f), health(4) , attack(1)
 {
 	m_hp = new HpBar();
 
@@ -29,7 +29,7 @@ Player::Player() : speed(2.0f), health(5) , attack(1)
 	
 	AddChild(m_hp);
 	m_hp->parentObject = m_hp;
-
+	
 }
 
 Player::~Player()
@@ -102,7 +102,7 @@ void Player::OnUpdate()
 			printf("Bullet ELSE \n");
 
 		BulletMgr::GetInstance()->RegisterBullet(bullet);
-
+		//m_hp->Damaged();
 	}
 
 	if (state == PlayerState::move)
