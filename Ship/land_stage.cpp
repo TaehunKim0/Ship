@@ -10,13 +10,12 @@
 #include"UI.h"
 #include"sea_stage.h"
 
-land_stage::land_stage(string id) : Scene(id)
+land_stage::land_stage(string id)
 {
 	player = PlayerMgr::GetInstance()->GetPlayer();
 	background = new Background();
 	turtleShip = new TurtleShip();
 	ui = new UI();
-
 	
 	this->AddChild(background);
 	this->AddChild(player);
@@ -31,7 +30,10 @@ land_stage::land_stage(string id) : Scene(id)
 	cout << "Current Scene : " << id << endl;
 
 	spawn = true;
-
+	//SetSize({
+	//	static_cast<float>(1280),
+	//	static_cast<float>(720)
+	//});
 }
 
 land_stage::~land_stage()
@@ -40,7 +42,22 @@ land_stage::~land_stage()
 
 void land_stage::OnUpdate()
 {
-	//만약 + 버튼을 눌럿을 경우, Friendly 소환
+	// 카메라 위치를 플레이어 이동 방향의 반대편으로 이동해주기위해 -로 변경
+	D3DXVECTOR2 cameraPosition = -GetPosition();
+
+	// 카메라 위치와 플레이어 위치 중심을 맞춰주기위해 계산
+	D3DXVECTOR2 targetPosition = player->GetPosition() - GetCenter();
+
+	D3DXVECTOR2 transform;
+	D3DXVec2Lerp(&transform, &cameraPosition, &targetPosition, 2.f);
+
+	// 카메라는 맵 안에서만 움직여야함
+	// 0 ~ 맵 가로 - 카메라 가로
+
+	if (transform.x >= 0 && transform.x < (2000 - GetSize().x))
+	{
+		SetPosition({ -transform.x , 0 });
+	}
 
 
 	//스코어가 600, 1단 완성
@@ -76,4 +93,5 @@ void land_stage::OnUpdate()
 
 void land_stage::OnDraw()
 {
+	
 }

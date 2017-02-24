@@ -39,6 +39,7 @@ void AddFriendly_Plus::OnUpdate()
 			SetVisible(false);
 			UnitSpawner::GetInstance()->SpawnFriendly(position.x, position.y);
 		}
+
 }
 
 void AddFriendly_Plus::SetIsPlused(bool plused)

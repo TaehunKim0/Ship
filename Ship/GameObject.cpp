@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "GameObject.h"
-
+#include"CircleCollider.h"
 
 GameObject::GameObject()
 {
@@ -110,12 +110,10 @@ void GameObject::SetVisible(bool visible)
 	this->visible = visible;
 }
 
-int GameObject::GetPositionX() const
-{
-	return this->position.x;
-}
 
-int GameObject::GetPositionY() const
+
+void GameObject::SetSize(D3DXVECTOR2 size)
 {
-	return this->position.y;
+		this->size = size;
+		center = size / 2;
 }

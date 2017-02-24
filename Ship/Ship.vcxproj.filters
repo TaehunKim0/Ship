@@ -31,6 +31,33 @@
     <Filter Include="Game\Unit\Enemy">
       <UniqueIdentifier>{e7b5d509-1f53-4c5c-a75c-243f54ba7c76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Animation">
+      <UniqueIdentifier>{00d1a3c6-fed9-40ad-9478-c072bdced1ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Collision">
+      <UniqueIdentifier>{e401dae4-9182-4abd-925e-acff5de2e321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Object">
+      <UniqueIdentifier>{28c87aa0-6c00-4b3d-8355-f311d5a5d7ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Time">
+      <UniqueIdentifier>{8663b83f-4eb6-445e-9335-3d4626534748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Sprite">
+      <UniqueIdentifier>{479e8436-3bf6-422c-b4ec-dc64fe4a4640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Texture">
+      <UniqueIdentifier>{5ba76e80-e0eb-4dd1-81d6-977030c3db65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Stdafx">
+      <UniqueIdentifier>{fc3f0b28-7a58-478c-bfc6-14535f36b05d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Timer">
+      <UniqueIdentifier>{1b108ea8-f2c5-474e-812f-39c4890a7cb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Console">
+      <UniqueIdentifier>{3eced229-11b0-4344-8097-9a06fdd919ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
@@ -51,27 +78,6 @@
     </ClCompile>
     <ClCompile Include="TextureMgr.cpp">
       <Filter>Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimationSprite.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="GameTime.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Intro_scene.cpp">
       <Filter>Game\Scene</Filter>
@@ -136,12 +142,6 @@
     <ClCompile Include="UI.cpp">
       <Filter>Game\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Collider.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="CircleCollider.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="BulletMgr.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
@@ -153,6 +153,33 @@
     </ClCompile>
     <ClCompile Include="HpBar.cpp">
       <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationSprite.cpp">
+      <Filter>Core\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Core\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleCollider.cpp">
+      <Filter>Core\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTime.cpp">
+      <Filter>Core\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Core\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Core\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Core\Stdafx</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Core\Timer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -173,33 +200,6 @@
     </ClInclude>
     <ClInclude Include="TextureMgr.h">
       <Filter>Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Console.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="SingleTon.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimationSprite.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="GameTime.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Intro_scene.h">
       <Filter>Game\Scene</Filter>
@@ -261,12 +261,6 @@
     <ClInclude Include="UI.h">
       <Filter>Game\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Collider.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="CircleCollider.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Game\Player</Filter>
     </ClInclude>
@@ -281,6 +275,39 @@
     </ClInclude>
     <ClInclude Include="HpBar.h">
       <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationSprite.h">
+      <Filter>Core\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Core\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleCollider.h">
+      <Filter>Core\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTime.h">
+      <Filter>Core\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Core\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Core\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Core\Stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Core\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Core\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTon.h">
+      <Filter>Core\Console</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

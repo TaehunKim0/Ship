@@ -19,6 +19,7 @@ private:
 
 public:
 	Sprite();
+	Sprite(std::wstring fileName);
 	virtual ~Sprite();
 
 	static Sprite* Create(std::string filename);
@@ -38,12 +39,15 @@ public:
 	RECT GetSourceRect();
 	void SetSourceRect(RECT rect);
 
+	void Resize(float width, float height);
+
+	void Setting();
+
 	virtual void FlipX();
 
 	void OnUpdate() override;
 	void OnDraw() override; //오버라이딩 제약
 
 	bool On;
-
+	bool is;
 };
-

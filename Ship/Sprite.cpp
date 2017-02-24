@@ -1,12 +1,14 @@
 #include "stdafx.h"
 #include "Sprite.h"
+
 #include"Texture.h"
 
-using namespace std;
-Sprite::Sprite() : color(D3DCOLOR_XRGB(255,2552,255))
-{
-}
 
+using namespace std;
+Sprite::Sprite() : color(D3DCOLOR_XRGB(255,2552,255)) , is(true)
+{
+
+}
 
 Sprite::~Sprite()
 {
@@ -25,13 +27,14 @@ Sprite * Sprite::Create(std::string filename, int x, int y, int width, int heigh
 		return nullptr;
 
 	auto sprite = new Sprite();
+
 	sprite->SetTexture(texture);
 
 	RECT sourceRect;
 	SetRect(&sourceRect, x, y, (width > 0) ? (x + width) : texture->GetWidth(), (height > 0) ? (y + height) : texture->GetHeight());
 
 	sprite->SetSourceRect(sourceRect);
-
+	
 	return sprite;
 }
 
@@ -79,6 +82,28 @@ void Sprite::SetSourceRect(RECT rect)
 	this->sourceRect = rect;
 }
 
+void Sprite::Resize(float width, float height)
+{
+	SetScale({
+		width / size.x,
+		height / size.y
+	}
+	);
+	
+	this->SetCenter({
+		scale.x / 2,
+		scale.y / 2
+	});
+}
+
+void Sprite::Setting()
+{
+	SetSize({
+		static_cast<float>(texture->GetWidth()),
+		static_cast<float>(texture->GetHeight())
+	});
+}
+
 void Sprite::FlipX()
 {
 	scaleCenter = texture->GetCentor();
@@ -87,6 +112,7 @@ void Sprite::FlipX()
 
 void Sprite::OnUpdate()
 {
+
 }
 
 void Sprite::OnDraw()
