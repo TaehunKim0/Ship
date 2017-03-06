@@ -110,7 +110,11 @@ void GameObject::SetVisible(bool visible)
 	this->visible = visible;
 }
 
-
+void GameObject::Translate(float x, float y)
+{
+	position.x += x;
+	position.y += y;
+}
 
 void GameObject::SetSize(D3DXVECTOR2 size)
 {

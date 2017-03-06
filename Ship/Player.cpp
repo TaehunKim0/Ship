@@ -89,8 +89,8 @@ void Player::OnUpdate()
 	//ÃÑ¾Ë °ø°Ý
 	if (InputMgr::GetInstance()->IsKeyDown(VK_SPACE) & GameTime::CurrentFrame % 10 == 0)
 	{
-		auto bullet = new Bullet("Player");
-		bullet->SetPosition(this->GetPosition() + (right->GetSize() / 2) - (bullet->bullet->GetSize() / 2));
+ 		auto bullet = new Bullet("Player");
+		bullet->SetPosition(this->GetPosition() + (right->GetSize()/ 2) - (bullet->bullet->GetSize() / 2));
 		
 		if (direction == PlayerDirection::left)
 			bullet->direction = bulletDirection::left;

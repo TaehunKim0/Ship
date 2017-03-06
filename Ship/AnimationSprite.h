@@ -14,6 +14,7 @@ private:
 	int frameDelay;
 	bool autoNext;
 
+
 public:
 	AnimationSprite(int frameSize, int frameDelay);
 	AnimationSprite();

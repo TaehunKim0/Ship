@@ -24,16 +24,17 @@ land_stage::land_stage(string id)
 	this->AddChild(turtleShip);
 	this->AddChild(ui);
 	
-
 	background->SetBackGround(Sprite::Create("Resources/Map/land.png"));
 
 	cout << "Current Scene : " << id << endl;
 
 	spawn = true;
+
 	//SetSize({
 	//	static_cast<float>(1280),
 	//	static_cast<float>(720)
 	//});
+	
 }
 
 land_stage::~land_stage()
@@ -42,23 +43,11 @@ land_stage::~land_stage()
 
 void land_stage::OnUpdate()
 {
-	// 카메라 위치를 플레이어 이동 방향의 반대편으로 이동해주기위해 -로 변경
-	D3DXVECTOR2 cameraPosition = -GetPosition();
 
-	// 카메라 위치와 플레이어 위치 중심을 맞춰주기위해 계산
-	D3DXVECTOR2 targetPosition = player->GetPosition() - GetCenter();
 
-	D3DXVECTOR2 transform;
-	D3DXVec2Lerp(&transform, &cameraPosition, &targetPosition, 2.f);
 
-	// 카메라는 맵 안에서만 움직여야함
-	// 0 ~ 맵 가로 - 카메라 가로
 
-	if (transform.x >= 0 && transform.x < (2000 - GetSize().x))
-	{
-		SetPosition({ -transform.x , 0 });
-	}
-
+	//this->GetSize();
 
 	//스코어가 600, 1단 완성
 	if (GameTime::TotalFrame == 300)

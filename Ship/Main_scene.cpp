@@ -12,7 +12,7 @@ Main_scene::Main_scene() : menuIndex(0)
 	selectMenu->AddFrame(Sprite::Create("Resources/UI/menu2.png"));
 	selectMenu->SetCurrentFrane(0);
 	selectMenu->SetAutoNext(false);
-	selectMenu->SetPosition(200, 350);
+	selectMenu->Translate(250, 300);
 
 	Main = Sprite::Create("Resources/Map/Main.png");
 	this->AddChild(Main);
@@ -28,7 +28,6 @@ Main_scene::~Main_scene()
 
 void Main_scene::OnUpdate()
 {
-
 	menuIndex = min(max(menuIndex, 0), 1);
 
 	if (InputMgr::GetInstance()->IsKeyDown(VK_DOWN))
@@ -62,6 +61,8 @@ void Main_scene::OnUpdate()
 	if (InputMgr::GetInstance()->IsKeyDown('P'))
 		SceneMgr::GetInstance()->SetScene(new land_stage("land"));
 
+	if(InputMgr::GetInstance()->IsKeyDown('O'))
+		SceneMgr::GetInstance()->SetScene(new Intro_scene());
 
 	if (InputMgr::GetInstance()->IsKeyDown(VK_RETURN))
 	{

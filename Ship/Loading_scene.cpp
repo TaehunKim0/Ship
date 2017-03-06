@@ -8,8 +8,7 @@ Loading_scene::Loading_scene()
 	id = "Loading";
 
 	loadingTurtle = Sprite::Create("Resources/turtle.png");
-
-	loadingTurtle->SetPosition(50, 400);
+	loadingTurtle->SetPosition(0, 150);
 
 	loadingBackground = Sprite::Create("Resources/Map/Background2.png");
 
@@ -39,5 +38,5 @@ void Loading_scene::OnUpdate()
 
 void Loading_scene::OnDraw()
 {
-
+	
 }

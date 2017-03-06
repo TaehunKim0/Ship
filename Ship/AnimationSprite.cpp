@@ -20,10 +20,15 @@ AnimationSprite::~AnimationSprite()
 
 void AnimationSprite::AddFrame(Sprite* sprite)
 {
+	sprite->SetParent(this);
+
 	spriteList.push_back(sprite);
 
 	if (GetTexture() == nullptr)
+	{
 		SetTexture(sprite->GetTexture());
+		SetSize(sprite->GetSize());
+	}
 }
 
 void AnimationSprite::SetCurrentFrane(int frame)
@@ -73,14 +78,13 @@ void AnimationSprite::OnUpdate()
 	if (frameDelay == 0 || !autoNext)
 		return;
 
-	if (GameTime::CurrentFrame % frameDelay == 0)
+	if (GameTime::TotalFrame % frameDelay == 0)
 		NextFrame();
-
 }
 
 void AnimationSprite::OnDraw()
 {
 	auto sprite = spriteList.at(currentFrame);
 
-	GraphicMgr::GetInstance()->DrawTexture(sprite->GetTexture(), &sprite->GetSourceRect(), matrix);
+	sprite->Draw();
 }

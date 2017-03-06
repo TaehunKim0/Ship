@@ -65,5 +65,5 @@ public:
 
 	bool IsCollideWith(CircleCollider* other);
 	
-	
+	void Translate(float x, float y);
 };

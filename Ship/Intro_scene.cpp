@@ -6,7 +6,6 @@ Intro_scene::Intro_scene()
 {
 	id = "Intro";
 
-	GameTime::CurrentFrame = 0;
 	Intro = new AnimationSprite(2, 150);
 	Intro->AddFrame(Sprite::Create("Resources/Intro/Intro1.png"));
 	Intro->AddFrame(Sprite::Create("Resources/Intro/Intro2.png"));
@@ -15,27 +14,26 @@ Intro_scene::Intro_scene()
 	Intro->parentObject = this;
 	Intro->SetAutoNext(true);
 
+	AddChild(Intro);
+
 	cout << "Current Scene : " << id << endl;
 
 	auto timer = new Timer([]()
 	{
 		SceneMgr::GetInstance()->SetScene(new Loading_scene());
-	},7000);
+	},6800);
 	timer->Run();
 }
 
 Intro_scene::~Intro_scene()
 
 {
-	SAFE_DELETE(Intro);
 }   
 
 void Intro_scene::OnUpdate()
 {
-	Intro->Update() ;
 }
 
 void Intro_scene::OnDraw()
 {
-	Intro->Draw();
 }

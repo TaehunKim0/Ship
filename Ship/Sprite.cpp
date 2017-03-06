@@ -7,6 +7,24 @@
 using namespace std;
 Sprite::Sprite() : color(D3DCOLOR_XRGB(255,2552,255)) , is(true)
 {
+	
+}
+
+Sprite::Sprite(std::string fileName)
+{
+	texture = TextureMgr::GetInstance()->LoadTexture(fileName);
+
+	IsLoaded = texture ? true : false;
+
+	if (!IsLoaded)
+		return;
+
+	SetSize({
+		static_cast<float>(texture->GetWidth()),
+		static_cast<float>(texture->GetHeight())
+	});
+
+	D3DXCreateSprite(GraphicMgr::GetInstance()->GetDevice(), &m_sprite);
 
 }
 
@@ -16,13 +34,14 @@ Sprite::~Sprite()
 
 Sprite * Sprite::Create(std::string filename)
 {
-	return Sprite::Create(filename, 0, 0, 0, 0);
+	auto instance = new Sprite(filename);
+	return instance;
 }
 
 Sprite * Sprite::Create(std::string filename, int x, int y, int width, int height)
 {
 	auto texture = TextureMgr::GetInstance()->LoadTexture(filename);
-
+	
 	if (texture == nullptr)
 		return nullptr;
 
@@ -36,16 +55,9 @@ Sprite * Sprite::Create(std::string filename, int x, int y, int width, int heigh
 	sprite->SetSourceRect(sourceRect);
 	
 	return sprite;
+	
 }
 
-D3DXVECTOR2 Sprite::GetPivot() const
-{
-	return D3DXVECTOR2();
-}
-
-void Sprite::SetPivot(int x, int y)
-{
-}
 
 Texture * Sprite::GetTexture() const
 {
@@ -57,10 +69,7 @@ void Sprite::SetTexture(Texture * texture)
 	this->texture = texture;
 }
 
-D3DXVECTOR2 Sprite::GetSize() const
-{
-	return D3DXVECTOR2(texture->GetWidth(), texture->GetHeight());
-}
+
 
 D3DXVECTOR2 Sprite::GetColor() const
 {
@@ -117,6 +126,23 @@ void Sprite::OnUpdate()
 
 void Sprite::OnDraw()
 {
-	GraphicMgr::GetInstance()->DrawTexture(texture, &sourceRect, color, matrix);
+	if (!visible || !IsLoaded) return;
 
+	RECT srcRect;
+	SetRect
+	(
+		&srcRect,
+		0,0,
+		static_cast<int>(size.x),
+		static_cast<int>(size.y)
+	);
+
+	m_sprite->Begin(D3DXSPRITE_ALPHABLEND);
+	m_sprite->SetTransform(&matrix);
+	m_sprite->Draw(
+		texture->GetTexture(),
+		&srcRect, NULL, &D3DXVECTOR3(this->position.x , this->position.y, .0f), //-m_ImageWidth / 2, -m_ImageHeight / 2
+		D3DCOLOR_ARGB(255, 255, 255, 255));
+
+	m_sprite->End();
 }
