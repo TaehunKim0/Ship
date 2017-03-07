@@ -100,6 +100,6 @@ void GraphicMgr::DrawTexture(Texture * texture, LPRECT srcRect, D3DXCOLOR color,
 {
 	sprite->Begin(D3DXSPRITE_ALPHABLEND); //Sprite 그릴 준비
 	sprite->SetTransform(&matrix); //Sprite의 행렬을 적용시킨다
-	sprite->Draw(texture->GetTexture(), srcRect, NULL, NULL, color);//그린다.
+	sprite->Draw(texture->GetTexture(), srcRect, NULL , &D3DXVECTOR3(-texture->GetWidth()/ 2, -texture->GetHeight() / 2, .0f), color);//그린다.
 	sprite->End();
 }

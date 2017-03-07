@@ -16,21 +16,21 @@ bool CollisionMgr::IsPointInRect(Sprite * sprite)
 	int xx = InputMgr::GetInstance()->GetMousePosition().x;
 	int yy = InputMgr::GetInstance()->GetMousePosition().y;
 
-	/*if ((CanPlus->position.x < xx && CanPlus->GetSourceRect().right <= xx)
-	&& (CanPlus->position.y <= yy && CanPlus->GetSourceRect().bottom <= yy))
+	if ((sprite->position.x < xx && sprite->GetSourceRect().right <= xx)
+	&& (sprite->position.y <= yy && sprite->GetSourceRect().bottom <= yy))
 	{
-	printf("Hover");
-	SetUIState(UIState::Hover);
+		//return true;
 	}
-	*///사각형 충돌
+
+	///사각형 충돌
 
 	float deltaX = sprite->position.x - xx;
 	float deltaY = sprite->position.y - yy;
 
 	float length = sqrt((deltaX * deltaX) + (deltaY * deltaY));
 	//printf("length : %f", length);
-
-	if (length < sprite->GetSourceRect().right / 2)
+	
+	if (length <  sprite->GetSourceRect().right / 2)
 	{
 		return true;
 	}

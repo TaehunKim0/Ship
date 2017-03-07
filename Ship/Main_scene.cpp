@@ -19,6 +19,7 @@ Main_scene::Main_scene() : menuIndex(0)
 	this->AddChild(selectMenu);
 
 	cout << "Current Scene : " << id << endl;
+
 }
 
 Main_scene::~Main_scene()

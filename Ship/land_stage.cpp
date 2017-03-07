@@ -43,9 +43,14 @@ land_stage::~land_stage()
 
 void land_stage::OnUpdate()
 {
-
-
-
+	if (position.x >= 0 && position.x < 2000)
+	{
+		if (!player->position.x == 1280 / 2)
+		{
+			
+		}
+	}
+	
 
 	//this->GetSize();
 

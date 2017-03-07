@@ -17,8 +17,8 @@ HpBar::HpBar()
 	AddChild(Bar);
 	AddChild(Hp);
 	
-	Bar->SetPosition(20, 15);
-	Hp->SetPosition(100, 70);
+	Bar->SetPosition(150, 105);
+	Hp->SetPosition(76, 68);
 
 }
 

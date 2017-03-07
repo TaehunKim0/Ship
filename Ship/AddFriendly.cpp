@@ -7,6 +7,7 @@ AddFriendly::AddFriendly()
 	CanPlus = Sprite::Create("Resources/UI/CanPlus.png");
 	CannotPlus = Sprite::Create("Resources/UI/CannotPlus.png");
 	int xx =0, yy = 0;
+	
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -22,8 +23,8 @@ AddFriendly::AddFriendly()
 	AddChild(CanPlus);
 	AddChild(CannotPlus);
 	
-	CanPlus->SetPosition(1080, 550);
-	CannotPlus->SetPosition(1080, 550);
+	CanPlus->SetPosition(1170, 630);
+	CannotPlus->SetPosition(1170, 630);
 
 	SetActivation(AddActivation::Cannot);
 	SetUIState(UIState::Not);
@@ -79,8 +80,12 @@ void AddFriendly::OnUpdate()
 		break;
 	}
 	
-	if(CollisionMgr::GetInstance()->IsPointInRect(CanPlus))
+	if (CollisionMgr::GetInstance()->IsPointInRect(CanPlus))
+	{
+		printf("HOVER");
 		SetUIState(UIState::Hover);
+	}
+		
 
 	else
 	{
